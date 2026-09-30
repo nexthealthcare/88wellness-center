@@ -837,10 +837,10 @@ fun CompanyIntroDialog(
             )
             Spacer(modifier = Modifier.height(6.dp))
             Text(
-              text = "운동과 문화, 사회적 교류가 어우러진 차세대 프라이빗 웰니스 라이프센터 솔루션을 개척합니다.",
+              text = "88웰니스는 더 오래, 건강하게 활동하기 위해 모이는 곳입니다.\nLONGEVITY(장수)라는 뜻에서 AGELESS(나이의 경계를 넘어선)로 화두가 되는 시대에 운동과 함께 취미, 교육, 사회적 교류활동을 할 수 있는 라이프스타일 센터입니다.",
               color = Color.White.copy(alpha = 0.85f),
               fontSize = 12.sp,
-              lineHeight = 17.sp,
+              lineHeight = 18.sp,
             )
           }
         }

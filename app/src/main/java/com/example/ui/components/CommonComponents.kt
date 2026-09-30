@@ -453,7 +453,7 @@ fun MascotStoryDialog(
         horizontalAlignment = Alignment.CenterHorizontally,
       ) {
         Text(
-          text = "“느리지만 멈추지 않는 건강! 삶을 즐기도록 내가 늘 함께할게.”\n\n거북이는 동서고금을 막론하고 무병장수의 상징입니다. 터틀88은 푸른 잎사귀처럼 늘 싱그럽고 활기차게 살아가고자 하는 여러분들의 웰니스 파트너입니다.",
+          text = "“느리지만 멈추지 않는 건강! 삶을 즐기도록 내가 늘 함께할게.”\n\n거북이는 결코 서두르지 않습니다. 하지만 올바른 방향으로 멈추지 않고 나아갑니다.\n\n88웰니스의 마스코트 터틀88은 조급함 대신 매일의 작은 좋은 습관을 쌓아 활기찬 삶을 영위하는 지혜를 상징하는 장수파트너 입니다.",
           style = MaterialTheme.typography.bodyMedium,
           color = TextDark,
           lineHeight = 22.sp,
