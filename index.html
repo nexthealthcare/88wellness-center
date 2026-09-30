@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>88 WELLNESS - 좋아하는 삶을, 오래도록 팔팔하게</title>
-  <meta name="description" content="운동과 문화. 사회적 교류가 있는 웰니스 라이프센터. 8대 신체조건과 8대 생활실천을 위한 맞춤형 웰니스 시스템." />
+  <meta name="description" content="운동과 문화, 사회적 교류가 있는 웰니스 라이프센터. 5대 웰니스 서비스와 8대 신체조건, 8대 생활실천을 위한 맞춤형 웰니스 시스템." />
   <!-- Font & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,7 @@
       --primary: #00563B;
       --primary-medium: #136F4E;
       --primary-light: #E2F0E8;
+      --primary-subtle: #E8F3ED;
       --gold: #C5A059;
       --gold-dark: #9A7B39;
       --gold-light: #F9F3E5;
@@ -24,6 +25,7 @@
       --text-medium: #3F584C;
       --text-muted: #6E867A;
       --border: #DDE6E0;
+      --border-light: #E8EFEA;
       --coral: #D65842;
     }
     * {
@@ -34,7 +36,7 @@
       -webkit-tap-highlight-color: transparent;
     }
     body {
-      background-color: var(--bg);
+      background-color: #ECEFEA;
       color: var(--text-dark);
       display: flex;
       justify-content: center;
@@ -48,7 +50,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      box-shadow: 0 0 30px rgba(0,0,0,0.06);
+      box-shadow: 0 0 35px rgba(0,0,0,0.08);
     }
     /* Top Header */
     header {
@@ -60,11 +62,12 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(5,56,37,0.15);
     }
     .header-brand {
       display: flex;
       flex-direction: column;
+      cursor: pointer;
     }
     .brand-title {
       display: flex;
@@ -85,7 +88,7 @@
     }
     .brand-sub {
       color: rgba(255,255,255,0.8);
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 600;
       letter-spacing: 1.2px;
       margin-top: 1px;
@@ -100,7 +103,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 4px;
+      gap: 4.5px;
       cursor: pointer;
       transition: all 0.2s;
     }
@@ -125,7 +128,7 @@
       justify-content: space-around;
       padding: 8px 4px calc(8px + env(safe-area-inset-bottom));
       z-index: 90;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.03);
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
     }
     .nav-item {
       flex: 1;
@@ -148,11 +151,11 @@
       fill: currentColor;
     }
     .nav-item.active {
-      color: var(--primary-dark);
+      color: var(--primary);
       font-weight: 700;
     }
     .nav-item.active svg {
-      fill: var(--primary-dark);
+      fill: var(--primary);
     }
     /* Main Content Area */
     main {
@@ -166,29 +169,66 @@
     .tab-content.active {
       display: block;
     }
-    /* Home Hero */
+
+    /* Common Components */
+    .section-header {
+      margin-bottom: 12px;
+    }
+    .section-badge {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--gold-dark);
+      letter-spacing: 1px;
+      margin-bottom: 3px;
+    }
+    .section-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-subtitle {
+      font-size: 12.5px;
+      color: var(--text-medium);
+      margin-top: 2px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.025);
+    }
+
+    /* Hero Banner */
     .hero-banner {
-      background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary) 100%);
+      background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary) 70%, #0c4e36 100%);
       color: #fff;
-      padding: 24px 20px 28px;
+      padding: 26px 20px 28px;
       position: relative;
       overflow: hidden;
     }
     .hero-badge {
-      display: inline-block;
-      background: rgba(197, 160, 89, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(197, 160, 89, 0.22);
       border: 1px solid var(--gold);
-      color: var(--gold);
+      color: var(--gold-light);
       font-size: 11px;
       font-weight: 700;
       padding: 4px 10px;
-      border-radius: 20px;
+      border-radius: 8px;
       margin-bottom: 12px;
       letter-spacing: 0.5px;
     }
     .hero-title {
-      font-size: 26px;
-      font-weight: 800;
+      font-size: 27px;
+      font-weight: 900;
       line-height: 1.35;
       margin-bottom: 10px;
     }
@@ -197,170 +237,355 @@
     }
     .hero-desc {
       font-size: 13.5px;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.88);
       line-height: 1.55;
-      margin-bottom: 20px;
     }
-    .hero-cta {
-      display: flex;
-      gap: 10px;
-    }
-    .btn-gold {
-      background: var(--gold);
-      color: #053825;
-      border: none;
-      font-weight: 700;
-      font-size: 14px;
-      padding: 12px 18px;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-    }
-    .btn-outline-white {
-      background: transparent;
-      color: #fff;
-      border: 1.2px solid rgba(255,255,255,0.7);
-      font-weight: 600;
-      font-size: 14px;
-      padding: 12px 18px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    /* Cards & Grids */
-    .section-padding {
-      padding: 20px;
-    }
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-    .section-title {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--primary-dark);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 18px;
-      padding: 18px;
-      margin-bottom: 14px;
-      border: 1px solid var(--border);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    }
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    .service-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 16px;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .service-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-2px);
-    }
-    .service-icon {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-    .service-name {
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--primary-dark);
-      margin-bottom: 4px;
-    }
-    .service-sub {
-      font-size: 11.5px;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
+
     /* Mascot Banner */
     .mascot-card {
       background: var(--gold-light);
-      border: 1px solid rgba(197, 160, 89, 0.4);
-      border-radius: 18px;
-      padding: 18px;
+      border: 1.2px solid rgba(197, 160, 89, 0.6);
+      border-radius: 20px;
+      padding: 16px;
+      margin: 14px 16px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       cursor: pointer;
+      box-shadow: 0 3px 10px rgba(197, 160, 89, 0.12);
+      transition: transform 0.2s;
+    }
+    .mascot-card:hover {
+      transform: translateY(-2px);
     }
     .mascot-avatar {
-      width: 64px;
-      height: 64px;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
-      background: var(--primary-dark);
+      background: var(--primary);
       border: 2px solid var(--gold);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 32px;
+      font-size: 34px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* 5 Core Service Cards */
+    .service-5-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--border-light);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .service-5-card:hover {
+      border-color: var(--primary);
+      transform: translateX(3px);
+      box-shadow: 0 4px 12px rgba(0,86,59,0.06);
+    }
+    .service-5-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
       flex-shrink: 0;
     }
+    .service-5-info {
+      flex: 1;
+    }
+    .service-5-title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 3px;
+    }
+    .service-5-en {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--primary-dark);
+    }
+    .service-5-sub {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold-dark);
+    }
+    .service-5-desc {
+      font-size: 12.5px;
+      color: var(--text-medium);
+      line-height: 1.45;
+    }
+
+    /* 88 Longevity Matrix System */
+    .matrix-card {
+      background: var(--primary-dark);
+      border-radius: 20px;
+      padding: 20px;
+      color: #fff;
+      margin: 14px 16px;
+      box-shadow: 0 6px 18px rgba(5,56,37,0.25);
+    }
+    .matrix-tab-bar {
+      display: flex;
+      background: var(--primary);
+      border-radius: 10px;
+      padding: 4px;
+      margin: 14px 0 16px;
+    }
+    .matrix-tab {
+      flex: 1;
+      padding: 8px 0;
+      border: none;
+      background: transparent;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .matrix-tab.active {
+      background: #fff;
+      color: var(--primary-dark);
+      font-weight: 800;
+    }
+    .domain-chip-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .domain-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 8px;
+      padding: 6px 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #fff;
+      font-weight: 500;
+    }
+    .domain-chip span.chip-icon {
+      font-size: 14px;
+    }
+
+    /* Big CTA Card */
+    .big-cta-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 22px 18px;
+      margin: 14px 16px;
+      border: 2px solid var(--primary);
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,86,59,0.08);
+    }
+    .btn-gold-action {
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background 0.2s;
+      box-shadow: 0 4px 12px rgba(0,86,59,0.25);
+    }
+    .btn-gold-action:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Services Screen (Filter Chips & Program List) */
+    .filter-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px 0 14px;
+      scrollbar-width: none;
+    }
+    .filter-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .filter-chip {
+      padding: 8px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-dark);
+      font-size: 12.5px;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-chip.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .program-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid var(--border-light);
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .prog-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .prog-badge.body { background: #E2F0E8; color: #00563B; }
+    .prog-badge.mind { background: #E5F0FA; color: #1B5E94; }
+    .prog-badge.class { background: #F6EDFC; color: #7B34A8; }
+    .prog-badge.life { background: #FEF3E2; color: #A66500; }
+    .prog-badge.care { background: #FDE8E8; color: #B32626; }
+
+    .prog-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+    .prog-target {
+      font-size: 12px;
+      color: var(--gold-dark);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .prog-summary {
+      font-size: 12.5px;
+      color: var(--text-medium);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .prog-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+      padding-top: 10px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+
+    /* Facility Space Cards */
+    .facility-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--border-light);
+      margin-bottom: 10px;
+    }
+    .facility-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .facility-name {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+    .facility-feature {
+      font-size: 11.5px;
+      color: var(--gold-dark);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .facility-desc {
+      font-size: 12px;
+      color: var(--text-medium);
+      line-height: 1.45;
+    }
+
     /* MY 88 CHECK Form */
     .check-container {
-      padding: 20px;
+      padding: 16px;
+    }
+    .progress-bar-wrap {
+      width: 100%;
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--primary);
+      width: 12.5%;
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .question-card {
       background: #fff;
       border-radius: 20px;
       padding: 22px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-light);
       box-shadow: 0 4px 14px rgba(0,0,0,0.04);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     .q-step {
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--gold-dark);
       letter-spacing: 1px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .q-domain {
       display: inline-block;
-      background: var(--primary-light);
+      background: var(--primary-subtle);
       color: var(--primary-dark);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 8px;
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 4px 8px;
       border-radius: 6px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     .q-title {
-      font-size: 17px;
-      font-weight: 700;
+      font-size: 17.5px;
+      font-weight: 800;
       color: var(--text-dark);
       line-height: 1.45;
       margin-bottom: 8px;
     }
-    .q-desc {
-      font-size: 12.5px;
-      color: var(--text-medium);
+    .q-help {
+      font-size: 12px;
+      color: var(--text-muted);
       line-height: 1.5;
       margin-bottom: 20px;
     }
     .score-buttons {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 9px;
     }
     .score-btn {
       width: 100%;
-      padding: 12px 16px;
+      padding: 13px 16px;
       border-radius: 12px;
       border: 1px solid var(--border);
       background: #fff;
@@ -373,15 +598,63 @@
       align-items: center;
       transition: all 0.2s;
     }
-    .score-btn.selected {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-    }
-    .score-btn:hover:not(.selected) {
+    .score-btn:hover {
       background: var(--primary-light);
       border-color: var(--primary);
     }
+
+    /* Daily 88 Screen */
+    .vitality-gauge-card {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px rgba(5,56,37,0.2);
+    }
+    .mission-item {
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--border-light);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .mission-item.completed {
+      background: #F4F7F4;
+      opacity: 0.85;
+    }
+    .custom-checkbox {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .mission-item.completed .custom-checkbox {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .custom-checkbox::after {
+      content: '✓';
+      font-size: 14px;
+      font-weight: 900;
+      display: none;
+    }
+    .mission-item.completed .custom-checkbox::after {
+      display: block;
+    }
+
     /* Drawer (Side Menu) */
     .drawer-overlay {
       position: fixed;
@@ -394,9 +667,7 @@
       display: none;
       backdrop-filter: blur(2px);
     }
-    .drawer-overlay.open {
-      display: block;
-    }
+    .drawer-overlay.open { display: block; }
     .drawer {
       position: fixed;
       top: 0;
@@ -410,9 +681,7 @@
       flex-direction: column;
       overflow-y: auto;
     }
-    .drawer.open {
-      right: 0;
-    }
+    .drawer.open { right: 0; }
     .drawer-header {
       background: var(--primary-dark);
       color: #fff;
@@ -428,12 +697,8 @@
       font-size: 22px;
       cursor: pointer;
     }
-    .drawer-menu {
-      padding: 16px 0;
-      flex: 1;
-    }
     .menu-link {
-      padding: 14px 22px;
+      padding: 13px 20px;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -444,12 +709,9 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-    .menu-link:hover {
-      background: var(--bg);
-    }
-    .menu-link span.icon {
-      font-size: 18px;
-    }
+    .menu-link:hover { background: var(--bg); }
+    .menu-link span.icon { font-size: 18px; }
+
     /* Modals */
     .modal-overlay {
       position: fixed;
@@ -464,9 +726,7 @@
       z-index: 300;
       padding: 20px;
     }
-    .modal-overlay.open {
-      display: flex;
-    }
+    .modal-overlay.open { display: flex; }
     .modal-box {
       background: #fff;
       border-radius: 24px;
@@ -482,16 +742,14 @@
       font-size: 20px;
       font-weight: 800;
       color: var(--primary-dark);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .modal-sub {
       font-size: 12px;
       color: var(--text-muted);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
-    .form-group {
-      margin-bottom: 14px;
-    }
+    .form-group { margin-bottom: 14px; }
     .form-label {
       font-size: 12.5px;
       font-weight: 700;
@@ -507,9 +765,7 @@
       font-size: 14px;
       outline: none;
     }
-    .form-input:focus {
-      border-color: var(--primary);
-    }
+    .form-input:focus { border-color: var(--primary); }
     .modal-close-btn {
       position: absolute;
       top: 18px;
@@ -527,21 +783,10 @@
       font-size: 11.5px;
       color: var(--text-medium);
       line-height: 1.6;
-      max-height: 260px;
+      max-height: 280px;
       overflow-y: auto;
       margin-bottom: 16px;
       border: 1px solid var(--border);
-    }
-    .btn-submit {
-      width: 100%;
-      padding: 14px;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
     }
     .footer-info {
       padding: 24px 20px;
@@ -555,16 +800,16 @@
 </head>
 <body>
   <div class="app-container">
-    <!-- Top Bar -->
+    <!-- Top Header -->
     <header>
-      <div class="header-brand">
+      <div class="header-brand" onclick="switchTab('home')">
         <div class="brand-title">
           <span class="brand-88">88</span>
           <span class="brand-wellness">WELLNESS</span>
         </div>
         <span class="brand-sub">AGELESS PERFORMANCE CENTER</span>
       </div>
-      <button class="menu-btn" onclick="toggleDrawer(true)" aria-label="메뉴 열기">
+      <button class="menu-btn" onclick="toggleDrawer(true)" aria-label="사이드 메뉴 열기">
         <span></span>
         <span></span>
         <span></span>
@@ -575,137 +820,248 @@
     <main>
       <!-- TAB 1: HOME -->
       <section id="tab-home" class="tab-content active">
+        <!-- 1. Hero Banner -->
         <div class="hero-banner">
-          <div class="hero-badge">88 LONGEVITY SYSTEM</div>
+          <div class="hero-badge">
+            <span>✨</span> WELLNESS & CULTURAL COMPLEX
+          </div>
           <h1 class="hero-title">
             좋아하는 삶을,<br />
             오래도록 <span>팔팔하게</span>
           </h1>
           <p class="hero-desc">
-            운동과 문화. 사회적 교류가 있는 웰니스 라이프센터.<br />
-            8대 신체조건과 8대 생활실천을 위한 맞춤형 웰니스 시스템을 만나보세요.
+            운동과 문화. 사회적 교류가 있는 웰니스 라이프센터
           </p>
-          <div class="hero-cta">
-            <button class="btn-gold" onclick="switchTab('check')">
-              MY 88 CHECK 무료 진단 →
-            </button>
-            <button class="btn-outline-white" onclick="openModal('company')">
-              센터 소개
-            </button>
+        </div>
+
+        <!-- 2. Mascot 터틀88 Card -->
+        <div class="mascot-card" onclick="openModal('mascot')">
+          <div class="mascot-avatar">🐢</div>
+          <div style="flex:1;">
+            <div style="font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 2px;">
+              안녕! 나는 <strong style="color:var(--primary-dark); font-weight:900;">터틀88</strong>이야!
+            </div>
+            <div style="font-size: 12.5px; color: var(--text-medium); line-height: 1.45;">
+              “느리지만 멈추지 않는 건강! 삶을 즐기도록 내가 늘 함께할게.”
+            </div>
+            <div style="margin-top: 6px; font-size: 11.5px; font-weight: 800; color: var(--primary); display:flex; align-items:center; gap:2px;">
+              마스코트 이야기 보기 <span>›</span>
+            </div>
           </div>
         </div>
 
-        <div class="section-padding">
+        <!-- 3. 5대 웰니스 서비스 (BODY, MIND, CLASS, LIFE, CARE) -->
+        <div style="padding: 6px 16px 12px;">
           <div class="section-header">
-            <h2 class="section-title">🌿 88 복합문화공간</h2>
-            <span style="font-size: 12px; color: var(--gold-dark); font-weight:700;">시설 둘러보기</span>
+            <span class="section-badge">5 SERVICES</span>
+            <h2 class="section-title">5대 웰니스 서비스</h2>
+            <p class="section-subtitle">몸과 마음, 배움과 일상을 완성하는 공간</p>
           </div>
 
-          <div class="service-grid">
-            <div class="service-card" onclick="openModal('company')">
-              <div class="service-icon">🏋️</div>
-              <div class="service-name">스마트 바이오 짐</div>
-              <div class="service-sub">생체역학 맞춤 근력 & 밸런스 운동</div>
-            </div>
-            <div class="service-card" onclick="openModal('company')">
-              <div class="service-icon">☕</div>
-              <div class="service-name">88 웰니스 라운지</div>
-              <div class="service-sub">항산화 블렌딩 티 & 소셜 살롱</div>
-            </div>
-            <div class="service-card" onclick="openModal('company')">
-              <div class="service-icon">🧖</div>
-              <div class="service-name">원적외선 편백 스파</div>
-              <div class="service-sub">심부 체온 상승 & 자율신경 회복</div>
-            </div>
-            <div class="service-card" onclick="openModal('company')">
-              <div class="service-icon">🩺</div>
-              <div class="service-name">1:1 프라이빗 케어</div>
-              <div class="service-sub">도수 교정 & 체형 밸런스 리셋</div>
-            </div>
-          </div>
-
-          <div style="margin-top: 18px;">
-            <div class="mascot-card" onclick="openModal('mascot')">
-              <div class="mascot-avatar">🐢</div>
-              <div>
-                <div style="font-weight: 800; font-size: 15px; color: var(--primary-dark); margin-bottom: 4px;">
-                  터틀88의 장수 이야기
-                </div>
-                <div style="font-size: 12px; color: var(--text-medium); line-height: 1.45;">
-                  "느리지만 멈추지 않는 건강한 걸음, 88세까지 청년처럼 누리는 웰니스 이야기"
-                </div>
+          <!-- 5 Cards -->
+          <div class="service-5-card" onclick="openServicesCategory('BODY')">
+            <div class="service-5-icon">🏋️</div>
+            <div class="service-5-info">
+              <div class="service-5-title-row">
+                <span class="service-5-en">BODY (신체)</span>
+                <span class="service-5-sub">• 팔팔한 활력과 부드러운 관절</span>
               </div>
+              <p class="service-5-desc">전문 트레이너와 함께하는 관절 보호 근력 강화, 골프 비거리 및 보행 밸런스 운동</p>
             </div>
+            <span style="color:var(--primary); font-size:18px;">›</span>
           </div>
+
+          <div class="service-5-card" onclick="openServicesCategory('MIND')">
+            <div class="service-5-icon">🧘</div>
+            <div class="service-5-info">
+              <div class="service-5-title-row">
+                <span class="service-5-en">MIND (마음·뇌)</span>
+                <span class="service-5-sub">• 명석한 두뇌와 평온한 마음</span>
+              </div>
+              <p class="service-5-desc">치매 예방 브레인 인지 트레이닝, 심신 안정을 위한 싱잉볼 사운드 명상 및 호흡 테라피</p>
+            </div>
+            <span style="color:var(--primary); font-size:18px;">›</span>
+          </div>
+
+          <div class="service-5-card" onclick="openServicesCategory('CLASS')">
+            <div class="service-5-icon">📖</div>
+            <div class="service-5-info">
+              <div class="service-5-title-row">
+                <span class="service-5-en">CLASS (배움)</span>
+                <span class="service-5-sub">• 새로운 배움과 지적 호기심</span>
+              </div>
+              <p class="service-5-desc">스마트폰 & AI 일상 활용법, 인문학 여행 강좌, 가드닝, 수채화 및 음악 살롱</p>
+            </div>
+            <span style="color:var(--primary); font-size:18px;">›</span>
+          </div>
+
+          <div class="service-5-card" onclick="openServicesCategory('LIFE')">
+            <div class="service-5-icon">☕</div>
+            <div class="service-5-info">
+              <div class="service-5-title-row">
+                <span class="service-5-en">LIFE (교류)</span>
+                <span class="service-5-sub">• 따뜻한 소셜과 건강한 미식</span>
+              </div>
+              <p class="service-5-desc">지중해식 장수 영양 다이닝, 취향을 나누는 88 소셜 살롱, 웰니스 북 라운지</p>
+            </div>
+            <span style="color:var(--primary); font-size:18px;">›</span>
+          </div>
+
+          <div class="service-5-card" onclick="openServicesCategory('CARE')">
+            <div class="service-5-icon">🧖</div>
+            <div class="service-5-info">
+              <div class="service-5-title-row">
+                <span class="service-5-en">CARE (회복)</span>
+                <span class="service-5-sub">• 1:1 맞춤 관리와 힐링 회복</span>
+              </div>
+              <p class="service-5-desc">척추 감압 및 체형 밸런스 도수 케어, 전신 온열 스파, 간호·운동 전문가의 헬스 리포트</p>
+            </div>
+            <span style="color:var(--primary); font-size:18px;">›</span>
+          </div>
+        </div>
+
+        <!-- 4. 88 LONGEVITY SYSTEM Matrix Card (8 Physical × 8 Lifestyle) -->
+        <div class="matrix-card">
+          <div style="font-size:11px; font-weight:900; color:var(--gold); letter-spacing:1px; margin-bottom:4px;">
+            88 LONGEVITY SYSTEM
+          </div>
+          <h3 style="font-size:18px; font-weight:800; margin-bottom:8px;">8가지 조건과 8가지 실천</h3>
+          <p style="font-size:12.5px; color:rgba(255,255,255,0.85); line-height:1.6;">
+            88은 단순한 센터 이름이 아닙니다.<br />
+            8대 신체 지표와 8대 생활 지표를 융합하여, 언제나 활력 넘치고 건강한 삶을 누릴 수 있도록 이끄는 종합 평가·상담·처방 체계입니다.
+          </p>
+
+          <!-- Tab Bar -->
+          <div class="matrix-tab-bar">
+            <button class="matrix-tab active" id="tab-btn-physical" onclick="toggleMatrixTab('physical')">
+              8대 신체점수 (Body)
+            </button>
+            <button class="matrix-tab" id="tab-btn-lifestyle" onclick="toggleMatrixTab('lifestyle')">
+              8대 생활점수 (Life)
+            </button>
+          </div>
+
+          <!-- Physical 8 Domains -->
+          <div id="matrix-physical" class="domain-chip-grid">
+            <div class="domain-chip"><span class="chip-icon">🏋️</span> 근력 (STRENGTH)</div>
+            <div class="domain-chip"><span class="chip-icon">🤸</span> 가동성 (MOBILITY)</div>
+            <div class="domain-chip"><span class="chip-icon">🎯</span> 균형감각 (BALANCE)</div>
+            <div class="domain-chip"><span class="chip-icon">🏃</span> 지구력 (ENDURANCE)</div>
+            <div class="domain-chip"><span class="chip-icon">⚡</span> 순발력 (POWER)</div>
+            <div class="domain-chip"><span class="chip-icon">🧠</span> 협응력 (COORDINATION)</div>
+            <div class="domain-chip"><span class="chip-icon">⏱️</span> 민첩성 (AGILITY)</div>
+            <div class="domain-chip"><span class="chip-icon">🌿</span> 신체 회복력 (RECOVERY)</div>
+          </div>
+
+          <!-- Lifestyle 8 Domains -->
+          <div id="matrix-lifestyle" class="domain-chip-grid" style="display: none;">
+            <div class="domain-chip"><span class="chip-icon">🚶</span> 활동 (MOVE)</div>
+            <div class="domain-chip"><span class="chip-icon">🧘</span> 마음챙김 (MIND)</div>
+            <div class="domain-chip"><span class="chip-icon">🥗</span> 영양식단 (NOURISH)</div>
+            <div class="domain-chip"><span class="chip-icon">🌙</span> 수면·휴식 (RECOVER)</div>
+            <div class="domain-chip"><span class="chip-icon">👥</span> 소셜 연결 (CONNECT)</div>
+            <div class="domain-chip"><span class="chip-icon">📚</span> 배움 (LEARN)</div>
+            <div class="domain-chip"><span class="chip-icon">⭐</span> 목적·성취 (PURPOSE)</div>
+            <div class="domain-chip"><span class="chip-icon">😄</span> 즐거움 (ENJOY)</div>
+          </div>
+        </div>
+
+        <!-- 5. Big CTA for MY 88 CHECK -->
+        <div class="big-cta-card">
+          <div style="font-size: 13px; font-weight: 800; color: var(--gold-dark); margin-bottom: 6px;">
+            ✨ 처음 입회하셨나요?
+          </div>
+          <h3 style="font-size: 21px; font-weight: 900; color: var(--primary-dark); margin-bottom: 6px;">
+            MY 88 CHECK 진단 받기
+          </h3>
+          <p style="font-size: 12.5px; color: var(--text-medium); line-height: 1.55; margin-bottom: 18px;">
+            8가지 영역을 점검하고, '근력이 아니라 RECOVER와 CONNECT가 필요합니다'와 같은 나만의 LONGEVITY PLAN을 무료로 처방받으세요.
+          </p>
+          <button class="btn-gold-action" onclick="switchTab('check')">
+            나의 88 지수 진단 & 플랜 생성 →
+          </button>
+        </div>
+
+        <!-- Company Footer -->
+        <div class="footer-info">
+          <strong>(주)넥스트헬스케어</strong> | 대표이사: 김재원<br />
+          대표전화: 010-8254-8883 | 이메일: nexthealthcare8@gmail.com<br />
+          브랜드: 88 WELLNESS · 터틀88 | 사업분야: 프라이빗 웰니스 라이프센터
         </div>
       </section>
 
       <!-- TAB 2: MY 88 CHECK -->
       <section id="tab-check" class="tab-content">
         <div class="check-container">
-          <!-- Non-evaluated State -->
-          <div id="check-intro" style="display: block;">
-            <div style="text-align: center; padding: 24px 0 16px;">
+          <!-- Step 1: Assessment Intro -->
+          <div id="check-intro">
+            <div style="text-align: center; padding: 18px 0 14px;">
               <span class="hero-badge" style="background:var(--gold-light); color:var(--gold-dark);">FREE ASSESSMENT</span>
-              <h2 style="font-size: 24px; font-weight: 900; color: var(--primary-dark); margin: 8px 0;">MY 88 CHECK 진단</h2>
-              <p style="font-size: 13px; color: var(--text-medium); line-height: 1.5;">
+              <h2 style="font-size: 22px; font-weight: 900; color: var(--primary-dark); margin: 6px 0;">MY 88 CHECK 진단</h2>
+              <p style="font-size: 12.5px; color: var(--text-medium); line-height: 1.5;">
                 회원가입 없이 누구나 8개 핵심 문항에 무료 응답할 수 있습니다.<br />
                 나만의 88 활력 지수를 확인해보세요!
               </p>
             </div>
 
             <div class="card">
-              <div style="font-weight: 700; font-size: 14px; color: var(--primary-dark); margin-bottom: 10px;">📋 진단 안내</div>
+              <div style="font-weight: 800; font-size: 14px; color: var(--primary-dark); margin-bottom: 8px;">📋 자가 진단 안내</div>
               <p style="font-size: 12px; color: var(--text-medium); line-height: 1.6;">
-                • 8대 신체조건 (근력, 가동성, 밸런스, 심폐지구력 등)<br />
-                • 8대 생활실천 (활동, 마음챙김, 영양, 수면, 교류 등)<br />
-                • 소요 시간: 약 2분 (회원가입 불필요)<br />
-                • <strong>진단 후 회원가입 시 나만의 1:1 맞춤 추천 플랜 영구 보관</strong>
+                • <strong>8대 신체조건</strong>: 근력, 가동성, 밸런스, 심폐지구력 등<br />
+                • <strong>8대 생활실천</strong>: 수면, 소셜, 영양, 배움 등<br />
+                • 소요 시간: 약 2분 (누구나 무료 진단)<br />
+                • <strong>결과 확인 시 회원가입을 통해 나만의 1:1 맞춤 플랜 영구 보관</strong>
               </p>
             </div>
 
-            <button class="btn-submit" onclick="startCheck()" style="margin-top: 10px;">
+            <button class="btn-gold-action" onclick="startCheck()" style="margin-top: 10px;">
               MY 88 CHECK 무료 진단 시작하기 →
             </button>
           </div>
 
-          <!-- Evaluation Questions View -->
+          <!-- Step 2: Evaluation Form -->
           <div id="check-eval" style="display: none;">
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" id="q-progress-bar"></div>
+            </div>
+
             <div class="question-card">
               <div class="q-step" id="q-step-text">QUESTION 1 / 8</div>
-              <div class="q-domain" id="q-domain-text">신체 근력 (STRENGTH)</div>
-              <h3 class="q-title" id="q-title-text">의자에서 손을 짚지 않고 일어나는 것이 수월하십니까?</h3>
-              <p class="q-desc" id="q-desc-text">하지 근력은 독립적인 일상생활과 보행 안정성을 결정짓는 핵심 지표입니다.</p>
+              <div class="q-domain" id="q-domain-text">근력 (Strength) • STRENGTH</div>
+              <h3 class="q-title" id="q-title-text">무거운 장바구니를 들거나 계단을 오를 때 무릎과 다리에 힘이 든든하게 들어가나요?</h3>
+              <p class="q-help" id="q-help-text">신체 점수: 일상 생활을 힘차게 유지하는 하체와 코어의 기초 지지력 평가</p>
 
               <div class="score-buttons">
-                <button class="score-btn" onclick="selectScore(5)">5점 - 매우 그렇다 (아주 수월함)</button>
-                <button class="score-btn" onclick="selectScore(4)">4점 - 대체로 그렇다 (약간 힘씀)</button>
-                <button class="score-btn" onclick="selectScore(3)">3점 - 보통이다 (상황에 따라 다름)</button>
-                <button class="score-btn" onclick="selectScore(2)">2점 - 조금 어렵다 (가끔 손 짚음)</button>
-                <button class="score-btn" onclick="selectScore(1)">1점 - 매우 어렵다 (손 짚어야 함)</button>
+                <button class="score-btn" onclick="selectScore(5)">5점 - 최상 / 매우 자신 있고 훌륭하다</button>
+                <button class="score-btn" onclick="selectScore(4)">4점 - 양호 / 잘 실천하는 편이다</button>
+                <button class="score-btn" onclick="selectScore(3)">3점 - 보통 / 그럭저럭 유지 중이다</button>
+                <button class="score-btn" onclick="selectScore(2)">2점 - 조금 부족 / 아쉬운 편이다</button>
+                <button class="score-btn" onclick="selectScore(1)">1점 - 매우 부족 / 전혀 그렇지 않다</button>
               </div>
             </div>
           </div>
 
-          <!-- Result View (Unlocked after Login/Signup) -->
+          <!-- Step 3: Unlocked Result Report -->
           <div id="check-result" style="display: none;">
-            <div class="card" style="background: var(--primary-dark); color: #fff; text-align: center; padding: 26px 20px;">
-              <div style="color: var(--gold); font-weight: 800; font-size: 12px; letter-spacing: 1px;">MY 88 VITALITY REPORT</div>
-              <h3 style="font-size: 20px; font-weight: 800; margin: 8px 0 16px;" id="result-user-title">회원님의 88 종합 활력 지수</h3>
+            <div class="card" style="background: var(--primary-dark); color: #fff; text-align: center; padding: 26px 18px;">
+              <div style="color: var(--gold); font-weight: 800; font-size: 11px; letter-spacing: 1px;">88 LONGEVITY REPORT</div>
+              <h3 style="font-size: 19px; font-weight: 900; margin: 6px 0 16px;" id="result-user-title">
+                김재원 회원님의 88 종합 활력 지수
+              </h3>
 
-              <div style="width: 90px; height: 90px; border-radius: 50%; border: 3px solid var(--gold); margin: 0 auto 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--primary);">
-                <span style="font-size: 32px; font-weight: 900; color: #fff;" id="result-score-val">84</span>
+              <div style="width: 96px; height: 96px; border-radius: 50%; border: 3px solid var(--gold); margin: 0 auto 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--primary);">
+                <span style="font-size: 34px; font-weight: 900; color: #fff;" id="result-score-val">84</span>
                 <span style="font-size: 10px; color: var(--gold); font-weight: 700;">/ 100점</span>
               </div>
 
-              <p style="font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5;">
+              <p style="font-size: 12.5px; color: rgba(255,255,255,0.85); line-height: 1.55;">
                 상위 15% 수준의 우수한 웰니스 밸런스를 유지하고 계십니다.<br />
-                맞춤 추천: <strong>수면 회복 & 소셜 살롱 프로그램</strong>
+                집중 케어 권장 영역: <strong>수면 & 회복 (RECOVER)</strong>
               </p>
             </div>
 
             <div class="card">
-              <div style="font-weight: 700; font-size: 14px; color: var(--primary-dark); margin-bottom: 8px;">✨ 1:1 맞춤 추천 플랜</div>
+              <div style="font-weight: 800; font-size: 14px; color: var(--primary-dark); margin-bottom: 8px;">✨ 1:1 맞춤 처방 플랜</div>
               <p style="font-size: 12.5px; color: var(--text-medium); line-height: 1.6;">
                 • 주 2회 스마트 바이오 짐 코어 안정화 세션<br />
                 • 원적외선 편백 스파를 통한 주 1회 심부 이완<br />
@@ -713,70 +1069,107 @@
               </p>
             </div>
 
-            <button class="btn-submit" onclick="startCheck()" style="background: var(--primary-medium);">
+            <button class="btn-gold-action" onclick="startCheck()" style="background: var(--primary-medium);">
               다시 진단하기
             </button>
           </div>
         </div>
       </section>
 
-      <!-- TAB 3: SERVICES -->
+      <!-- TAB 3: 복합문화공간 (5대 웰니스 서비스 & 시설 & 프로그램) -->
       <section id="tab-services" class="tab-content">
-        <div class="section-padding">
+        <div style="padding: 16px;">
           <div class="section-header">
-            <h2 class="section-title">복합문화공간 시설 & 프로그램</h2>
+            <span class="section-badge">5 CATEGORIES</span>
+            <h2 class="section-title">복합문화공간</h2>
+            <p class="section-subtitle">오래도록 건강한 삶을 누릴 수 있도록 엄선된 전문 프로그램</p>
           </div>
-          <div class="card">
-            <div style="font-size: 15px; font-weight: 800; color: var(--primary-dark); margin-bottom: 6px;">
-              스마트 바이오 짐 (Smart Bio Gym)
-            </div>
-            <p style="font-size: 12.5px; color: var(--text-medium); line-height: 1.6;">
-              독일 정밀 바이오메카닉 운동 기구와 AI 자세 분석 센서를 탑재하여 관절 부담 없이 근감소를 예방하는 프리미엄 운동 공간.
-            </p>
+
+          <!-- Category Filter Chips -->
+          <div class="filter-scroll">
+            <button class="filter-chip active" id="chip-ALL" onclick="filterServices('ALL')">전체 보기</button>
+            <button class="filter-chip" id="chip-BODY" onclick="filterServices('BODY')">🏋️ BODY</button>
+            <button class="filter-chip" id="chip-MIND" onclick="filterServices('MIND')">🧘 MIND</button>
+            <button class="filter-chip" id="chip-CLASS" onclick="filterServices('CLASS')">📖 CLASS</button>
+            <button class="filter-chip" id="chip-LIFE" onclick="filterServices('LIFE')">☕ LIFE</button>
+            <button class="filter-chip" id="chip-CARE" onclick="filterServices('CARE')">🧖 CARE</button>
           </div>
-          <div class="card">
-            <div style="font-size: 15px; font-weight: 800; color: var(--primary-dark); margin-bottom: 6px;">
-              88 웰니스 라운지 (Wellness Lounge)
+
+          <!-- Selected Category Info Banner -->
+          <div id="service-cat-banner" class="card" style="background:var(--primary-subtle); border-color:rgba(0,86,59,0.2); display:none; margin-bottom:14px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div id="cat-banner-icon" style="font-size:26px;">🏋️</div>
+              <div>
+                <div style="display:flex; align-items:baseline; gap:6px;">
+                  <strong style="color:var(--primary-dark); font-size:15px;" id="cat-banner-en">BODY</strong>
+                  <span style="font-size:12px; color:var(--gold-dark); font-weight:700;" id="cat-banner-sub">• 활력과 관절</span>
+                </div>
+                <div style="font-size:12px; color:var(--text-medium); line-height:1.4; margin-top:2px;" id="cat-banner-desc">
+                  전문 트레이너와 함께하는 관절 보호 근력 강화
+                </div>
+              </div>
             </div>
-            <p style="font-size: 12.5px; color: var(--text-medium); line-height: 1.6;">
-              항산화 한방 허브티, 두뇌 활력 오메가 스낵과 함께 웰니스 강좌 및 문화 예술 살롱이 열리는 복합 소셜 공간.
-            </p>
           </div>
-          <div class="card">
-            <div style="font-size: 15px; font-weight: 800; color: var(--primary-dark); margin-bottom: 6px;">
-              원적외선 편백 스파 (Hinoki Spa)
+
+          <!-- Section: 센터 시설 안내 -->
+          <div style="margin: 10px 0 16px;">
+            <div style="font-size:15px; font-weight:800; color:var(--primary-dark); margin-bottom:8px;">
+              🌿 센터 공간 시설 안내
             </div>
-            <p style="font-size: 12.5px; color: var(--text-medium); line-height: 1.6;">
-              피톤치드 편백나무와 심부 원적외선 온열 테라피로 면역력과 혈액 순환을 리셋하는 프라이빗 회복 공간.
-            </p>
+            <div id="facilities-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Section: 전문 프로그램 리스트 -->
+          <div>
+            <div style="font-size:15px; font-weight:800; color:var(--primary-dark); margin-bottom:8px;">
+              📋 맞춤형 전문 프로그램
+            </div>
+            <div id="programs-container">
+              <!-- Rendered via JS -->
+            </div>
           </div>
         </div>
       </section>
 
       <!-- TAB 4: DAILY 88 -->
       <section id="tab-daily" class="tab-content">
-        <div class="section-padding">
+        <div style="padding: 16px;">
           <div class="section-header">
-            <h2 class="section-title">데일리 88 실천</h2>
+            <span class="section-badge">DAILY 8</span>
+            <h2 class="section-title">데일리 88 실천 챌린지</h2>
+            <p class="section-subtitle">8대 생활 실천으로 채우는 오늘의 활력</p>
           </div>
-          <div class="card">
-            <div style="font-size: 13.5px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">
-              오늘의 8대 웰니스 미션
+
+          <!-- Vitality Gauge -->
+          <div class="vitality-gauge-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <div>
+                <div style="font-size:11px; font-weight:800; color:var(--gold); letter-spacing:1px;">TODAY VITALITY</div>
+                <h3 style="font-size:18px; font-weight:900;">오늘의 88 활력 지수</h3>
+              </div>
+              <div style="font-size:26px; font-weight:900; color:var(--gold);" id="daily-vitality-text">
+                50%
+              </div>
             </div>
-            <div style="font-size: 12.5px; color: var(--text-medium); line-height: 1.8;">
-              ☑️ 하루 7,000보 활기찬 걷기 (MOVE)<br />
-              ☑️ 5분 깊은 복식호흡 & 감사 명상 (MIND)<br />
-              ☑️ 끼니마다 단백질 챙기기 (NOURISH)<br />
-              ⬜ 따뜻한 차 한 잔과 20분 릴랙스 (RECOVER)<br />
-              ⬜ 88 살롱 친구에게 안부 전하기 (CONNECT)<br />
-              ☑️ 스마트폰 새 기능 또는 칼럼 읽기 (LEARN)
+            <div style="width:100%; height:8px; background:rgba(255,255,255,0.2); border-radius:4px; overflow:hidden;">
+              <div style="height:100%; background:var(--gold); width:50%; transition:width 0.3s;" id="daily-gauge-bar"></div>
             </div>
+            <div style="font-size:11.5px; color:rgba(255,255,255,0.85); margin-top:8px;" id="daily-status-desc">
+              8개 중 4개 완료! 조금만 더 힘내서 팔팔한 하루를 완성해보세요.
+            </div>
+          </div>
+
+          <!-- 8 Missions Checklist -->
+          <div id="daily-missions-list">
+            <!-- Rendered by JS -->
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Bottom Navigation -->
+    <!-- Bottom Navigation Bar -->
     <nav class="bottom-nav">
       <button class="nav-item active" onclick="switchTab('home')" id="nav-home">
         <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -796,28 +1189,21 @@
       </button>
     </nav>
 
-    <!-- Footer Information -->
-    <div class="footer-info">
-      <strong>(주)넥스트헬스케어</strong> | 대표이사: 김재원<br />
-      대표전화: 010-8254-8883 | 이메일: nexthealthcare8@gmail.com<br />
-      브랜드: 88 WELLNESS · 터틀88 | 사업분야: 프라이빗 웰니스 라이프센터
-    </div>
-
     <!-- Side Navigation Drawer -->
     <div class="drawer-overlay" id="drawer-overlay" onclick="toggleDrawer(false)"></div>
     <div class="drawer" id="side-drawer">
       <div class="drawer-header">
         <div>
-          <div style="font-size: 20px; font-weight: 900; color: var(--gold);">88 WELLNESS</div>
+          <div style="font-size: 21px; font-weight: 900; color: var(--gold);">88 WELLNESS</div>
           <div style="font-size: 10px; color: rgba(255,255,255,0.7); letter-spacing: 1px;">AGELESS PERFORMANCE</div>
         </div>
         <button class="drawer-close" onclick="toggleDrawer(false)">✕</button>
       </div>
 
-      <!-- Auth Card in Drawer -->
+      <!-- Auth Box inside Drawer -->
       <div style="padding: 16px; background: var(--gold-light); border-bottom: 1px solid var(--border);" id="drawer-auth-box">
         <div id="drawer-guest-view">
-          <div style="font-size: 13px; font-weight: 700; color: var(--primary-dark);">로그인이 필요합니다</div>
+          <div style="font-size: 13.5px; font-weight: 800; color: var(--primary-dark);">로그인이 필요합니다</div>
           <div style="font-size: 11px; color: var(--text-medium); margin: 4px 0 10px;">회원가입 후 MY 88 CHECK 분석 리포트를 보관하세요.</div>
           <div style="display: flex; gap: 8px;">
             <button onclick="toggleDrawer(false); openModal('signup');" style="flex:1; padding:8px; background:var(--primary); color:#fff; border:none; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer;">회원가입</button>
@@ -852,14 +1238,18 @@
           <span class="icon">📋</span> MY 88 CHECK 진단
         </div>
         <div class="menu-link" onclick="toggleDrawer(false); switchTab('services');">
-          <span class="icon">🏋️</span> 복합문화공간 시설
+          <span class="icon">🏋️</span> 5대 웰니스 서비스 & 시설
+        </div>
+        <div class="menu-link" onclick="toggleDrawer(false); switchTab('daily');">
+          <span class="icon">✅</span> 데일리 88 실천
         </div>
         <div class="menu-link" onclick="toggleDrawer(false); openModal('mascot');">
           <span class="icon">🐢</span> 터틀88 마스코트 이야기
         </div>
       </div>
 
-      <div style="padding: 16px; background: #fafafa; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted);">
+      <div style="padding: 16px; background: #fafafa; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted); line-height:1.5;">
+        (주)넥스트헬스케어 · 대표이사 김재원<br />
         고객센터: 010-8254-8883<br />
         문의: nexthealthcare8@gmail.com
       </div>
@@ -880,7 +1270,7 @@
           <label class="form-label">비밀번호</label>
           <input type="password" id="login-pw" class="form-input" placeholder="비밀번호" value="123456" />
         </div>
-        <button class="btn-submit" onclick="handleLogin()" style="margin-top: 10px;">로그인</button>
+        <button class="btn-gold-action" onclick="handleLogin()" style="margin-top: 10px;">로그인</button>
 
         <div style="margin-top: 14px; text-align: center; font-size: 12px;">
           아직 회원이 아니신가요? 
@@ -898,19 +1288,19 @@
 
         <div class="form-group">
           <label class="form-label">이름 (실명)</label>
-          <input type="text" id="reg-name" class="form-input" placeholder="홍길동" />
+          <input type="text" id="reg-name" class="form-input" placeholder="김재원" value="김재원" />
         </div>
         <div class="form-group">
           <label class="form-label">이메일 (아이디)</label>
-          <input type="email" id="reg-email" class="form-input" placeholder="name@example.com" />
+          <input type="email" id="reg-email" class="form-input" placeholder="nexthealthcare8@gmail.com" value="nexthealthcare8@gmail.com" />
         </div>
         <div class="form-group">
           <label class="form-label">연락처 (휴대폰)</label>
-          <input type="tel" id="reg-phone" class="form-input" placeholder="010-0000-0000" />
+          <input type="tel" id="reg-phone" class="form-input" placeholder="010-8254-8883" value="010-8254-8883" />
         </div>
         <div class="form-group">
           <label class="form-label">비밀번호 (6자 이상)</label>
-          <input type="password" id="reg-pw" class="form-input" placeholder="비밀번호" />
+          <input type="password" id="reg-pw" class="form-input" placeholder="비밀번호" value="123456" />
         </div>
 
         <div style="background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:10px; margin-bottom:14px; font-size:12px;">
@@ -925,7 +1315,7 @@
           </div>
         </div>
 
-        <button class="btn-submit" onclick="handleSignUp()">회원가입 완료</button>
+        <button class="btn-gold-action" onclick="handleSignUp()">회원가입 완료</button>
       </div>
     </div>
 
@@ -954,7 +1344,7 @@
           • 연락처: 010-8254-8883 | 이메일: nexthealthcare8@gmail.com
         </div>
 
-        <button class="btn-submit" onclick="closeModal('policy')">확인</button>
+        <button class="btn-gold-action" onclick="closeModal('policy')">확인</button>
       </div>
     </div>
 
@@ -965,7 +1355,7 @@
         <h3 class="modal-title">회사소개</h3>
         <p class="modal-sub">(주)넥스트헬스케어 · NEXT HEALTHCARE</p>
 
-        <div class="card" style="background:var(--primary-dark); color:#fff;">
+        <div class="card" style="background:var(--primary-dark); color:#fff; margin-bottom:12px;">
           <div style="color:var(--gold); font-size:11px; font-weight:800;">OUR VISION</div>
           <div style="font-size:16px; font-weight:800; margin:4px 0;">좋아하는 삶을, 오래도록 팔팔하게</div>
           <p style="font-size:12px; color:rgba(255,255,255,0.85); line-height:1.5;">
@@ -973,7 +1363,7 @@
           </p>
         </div>
 
-        <div style="background:var(--gold-light); border:1px solid rgba(197,160,89,0.5); border-radius:12px; padding:12px; font-size:12px; margin-bottom:16px;">
+        <div style="background:var(--gold-light); border:1px solid rgba(197,160,89,0.5); border-radius:12px; padding:12px; font-size:12px; margin-bottom:16px; line-height:1.7;">
           <strong>• 상호명:</strong> (주)넥스트헬스케어<br />
           <strong>• 대표이사:</strong> 김재원<br />
           <strong>• 대표전화:</strong> 010-8254-8883<br />
@@ -981,7 +1371,7 @@
           <strong>• 핵심 브랜드:</strong> 88 WELLNESS · 터틀88
         </div>
 
-        <button class="btn-submit" onclick="closeModal('company')">확인</button>
+        <button class="btn-gold-action" onclick="closeModal('company')">확인</button>
       </div>
     </div>
 
@@ -989,35 +1379,61 @@
     <div class="modal-overlay" id="modal-mascot">
       <div class="modal-box" style="text-align:center;">
         <button class="modal-close-btn" onclick="closeModal('mascot')">✕</button>
-        <div style="font-size: 48px; margin-bottom: 8px;">🐢</div>
+        <div style="font-size: 52px; margin-bottom: 6px;">🐢</div>
         <h3 class="modal-title">터틀88 마스코트 이야기</h3>
-        <p class="modal-sub">88세까지 건강하게 누리는 삶의 지혜</p>
+        <p class="modal-sub">88세까지 청년처럼 누리는 장수 파트너</p>
 
-        <p style="font-size: 13px; color: var(--text-medium); line-height: 1.6; text-align: left; margin-bottom: 18px;">
+        <p style="font-size: 13px; color: var(--text-medium); line-height: 1.65; text-align: left; margin-bottom: 18px;">
           거북이는 결코 서두르지 않습니다. 하지만 올바른 방향으로 멈추지 않고 나아갑니다.<br /><br />
-          88 WELLNESS의 마스코트 <strong>'터틀88'</strong>은 조급함 대신 매일의 작은 좋은 습관을 쌓아 88세, 그 이상까지 활기찬 삶을 영위하는 장수 파트너입니다.
+          88 WELLNESS의 마스코트 <strong>'터틀88'</strong>은 조급함 대신 매일의 작은 좋은 습관을 쌓아 88세, 그 이상까지 활기찬 삶을 영위하는 지혜를 상징합니다.
         </p>
 
-        <button class="btn-submit" onclick="closeModal('mascot')">함께 실천하기</button>
+        <button class="btn-gold-action" onclick="closeModal('mascot')">함께 실천하기</button>
       </div>
     </div>
 
-    <!-- MODAL: AUTH GATEKEEPER (Triggered after 8 questions) -->
+    <!-- MODAL: PROGRAM BOOKING -->
+    <div class="modal-overlay" id="modal-booking">
+      <div class="modal-box">
+        <button class="modal-close-btn" onclick="closeModal('booking')">✕</button>
+        <h3 class="modal-title">프로그램 상담 & 예약</h3>
+        <p class="modal-sub" id="booking-prog-title">골프 컨디셔닝 & 흉추·고관절 가동성</p>
+
+        <div style="background:var(--bg); padding:12px; border-radius:10px; font-size:12px; margin-bottom:14px; line-height:1.5;">
+          • 전문 담당자: <strong id="booking-instructor">이민우 수석 코치</strong><br />
+          • 진행 일정: <span id="booking-duration">50분 / 주 2회</span><br />
+          • 시설 안내: 88 WELLNESS 본점 컨시어지 데스크
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">예약자 성함</label>
+          <input type="text" id="book-name" class="form-input" value="김재원" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">연락처</label>
+          <input type="tel" id="book-phone" class="form-input" value="010-8254-8883" />
+        </div>
+
+        <button class="btn-gold-action" onclick="submitBooking()">상담 예약 접수하기</button>
+      </div>
+    </div>
+
+    <!-- MODAL: AUTH GATEKEEPER -->
     <div class="modal-overlay" id="modal-gatekeeper">
       <div class="modal-box" style="text-align:center;">
-        <div style="font-size: 40px; margin-bottom: 6px;">🎉</div>
+        <div style="font-size: 42px; margin-bottom: 6px;">🎉</div>
         <h3 class="modal-title">88 CHECK 진단 완료!</h3>
         <p style="font-size: 13px; color: var(--text-medium); line-height: 1.5; margin: 8px 0 16px;">
           회원님의 88 활력 지수 분석 리포트와 1:1 맞춤 추천 플랜을 확인하시려면 <strong>회원가입 또는 로그인</strong>이 필요합니다.
         </p>
-        <div style="background:var(--bg); padding:10px; border-radius:10px; font-size:11.5px; color:var(--primary-dark); margin-bottom:16px;">
-          🌿 방금 응답하신 소중한 답변 데이터는 안전하게 보존되어 있으니, 가입 즉시 결과를 확인하실 수 있습니다.
+        <div style="background:var(--primary-subtle); padding:12px; border-radius:10px; font-size:12px; color:var(--primary-dark); margin-bottom:16px;">
+          🌿 방금 응답하신 8개 답변 데이터는 안전하게 보존되어 있으니, 가입 즉시 결과를 확인하실 수 있습니다.
         </div>
 
-        <button class="btn-submit" onclick="closeModal('gatekeeper'); openModal('signup');" style="margin-bottom:8px;">
+        <button class="btn-gold-action" onclick="closeModal('gatekeeper'); openModal('signup');" style="margin-bottom:8px;">
           간편 회원가입하고 결과 보기
         </button>
-        <button onclick="closeModal('gatekeeper'); openModal('login');" style="width:100%; padding:12px; background:#fff; border:1px solid var(--primary); color:var(--primary); border-radius:12px; font-size:14px; font-weight:700; cursor:pointer;">
+        <button onclick="closeModal('gatekeeper'); openModal('login');" style="width:100%; padding:12px; background:#fff; border:1.5px solid var(--primary); color:var(--primary); border-radius:12px; font-size:14px; font-weight:700; cursor:pointer;">
           기존 계정으로 로그인
         </button>
       </div>
@@ -1025,22 +1441,70 @@
   </div>
 
   <script>
-    // State
+    // 5 Categories Data
+    const categoryInfo = {
+      BODY: { en: "BODY (신체)", sub: "• 팔팔한 활력과 부드러운 관절", icon: "🏋️", desc: "전문 트레이너와 함께하는 관절 보호 근력 강화, 골프 비거리 및 보행 밸런스 운동" },
+      MIND: { en: "MIND (마음·뇌)", sub: "• 명석한 두뇌와 평온한 마음", icon: "🧘", desc: "치매 예방 브레인 인지 트레이닝, 심신 안정을 위한 싱잉볼 사운드 명상 및 호흡 테라피" },
+      CLASS: { en: "CLASS (배움)", sub: "• 새로운 배움과 지적 호기심", icon: "📖", desc: "스마트폰 & AI 일상 활용법, 인문학 여행 강좌, 가드닝, 수채화 및 음악 살롱" },
+      LIFE: { en: "LIFE (교류)", sub: "• 따뜻한 소셜과 건강한 미식", icon: "☕", desc: "지중해식 장수 영양 다이닝, 취향을 나누는 88 소셜 살롱, 웰니스 북 라운지" },
+      CARE: { en: "CARE (회복)", sub: "• 1:1 맞춤 관리와 힐링 회복", icon: "🧖", desc: "척추 감압 및 체형 밸런스 도수 케어, 전신 온열 스파, 간호·운동 전문가의 헬스 리포트" }
+    };
+
+    // Facilities Data
+    const centerFacilities = [
+      { id: "f_1", name: "88 웰니스 라운지 (88 Lounge)", cat: "LIFE", icon: "☕", feature: "고급스럽고 평온한 딥그린 인테리어와 자연 채광 통창", desc: "자연 친화적이고 아늑한 딥그린 티 살롱과 편안한 웰니스 북 서가" },
+      { id: "f_2", name: "스마트 바이오 짐 (Smart Bio-Gym)", cat: "BODY", icon: "🏋️", feature: "관절 충격 없는 공압식 근력 기구 및 에어 트레드밀", desc: "근감소증 예방을 위해 개인별 근력 수치에 자동 매칭되는 인체공학적 피트니스 공간" },
+      { id: "f_3", name: "브레인 & 마인드 챔버 (Mind Chamber)", cat: "MIND", icon: "🧘", feature: "차음 방음 설계, 편백나무 향, 싱잉볼 사운드 시스템", desc: "잡념을 내려놓고 뇌신경을 쉬게 하는 명상 및 인지 인텔리전스 훈련실" },
+      { id: "f_4", name: "88 아카데미 살롱 룸 (Salon Room)", cat: "CLASS", icon: "📖", feature: "대형 터치스크린과 편안한 원목 테이블 세팅", desc: "스마트폰 강좌, 예술, 인문학 세미나가 열리는 지적 배움과 교류의 장" },
+      { id: "f_5", name: "하이드로 & 히노끼 스파 (Hydro Spa)", cat: "CARE", icon: "🧖", feature: "편백 원목 원적외선 챔버 및 1:1 감압 룸", desc: "운동 후 뭉친 근육을 부드럽게 풀고 면역 체온을 유지하는 럭셔리 회복 공간" }
+    ];
+
+    // Programs Data
+    const allServicePrograms = [
+      { id: "p1", title: "골프 컨디셔닝 & 흉추·고관절 가동성", cat: "BODY", target: "비거리 회복 및 허리 부담 없이 편안하게 라운딩하고 싶은 골퍼", dur: "50분 / 주 2회", sum: "푸른 페어웨이 잔디를 밟듯 안정된 하체 밸런스와 회전 유연성을 길러주는 맞춤 스트렝스", ins: "이민우 수석 바이오메카닉 코치", tags: ["골프 특화", "관절 보호", "하체 밸런스"] },
+      { id: "p2", title: "낙상 ZERO 밸런스 & 코어 필라테스", cat: "BODY", target: "걸음걸이가 불안정하거나 평형 감각을 키우고 싶은 회원", dur: "45분 / 주 2회", sum: "특수 에어 밸런스 패드와 체형 기구를 활용해 넘어짐 걱정 없이 꼿꼿한 자세를 완성합니다.", ins: "박수진 재활 필라테스 마스터", tags: ["낙상 예방", "자세 교정", "발목 안정성"] },
+      { id: "p3", title: "팔팔(88) 유산소 & 파워 워킹 서킷", cat: "BODY", target: "심폐 활력을 높이고 활기찬 일상 체력을 원하는 회원", dur: "40분 / 주 3회", sum: "관절 충격을 80% 줄여주는 무중력 보행 트레드밀과 경쾌한 리듬 인터벌 워킹", ins: "정재훈 펑셔널 트레이닝 디렉터", tags: ["심폐 지구력", "관절 무충격", "활력 충전"] },
+      { id: "p4", title: "치매 예방 브레인 싱킹 & 뉴로 피트니스", cat: "MIND", target: "기억력 감퇴를 예방하고 두뇌를 기민하게 깨우고 싶은 분", dur: "50분 / 주 2회", sum: "이중 과제 인지 운동(Dual-task)과 시각-공간 반응 훈련을 통해 뇌 신경망을 강화합니다.", ins: "김은영 인지의학 박사", tags: ["두뇌 활력", "기억력 강화", "뉴로 트레이닝"] },
+      { id: "p5", title: "싱잉볼 힐링 사운드 & 깊은 호흡 명상", cat: "MIND", target: "불면증과 스트레스로 깊은 쉼이 필요한 회원", dur: "60분 / 주 1~2회", sum: "티베트 수제 싱잉볼의 맑은 공명과 아로마 테라피로 자율신경계를 안정시키고 뇌파를 알파파로 이끕니다.", ins: "서하은 마인드풀니스 안내자", tags: ["숙면 유도", "스트레스 완화", "자율신경 조절"] },
+      { id: "p6", title: "스마트 라이프 마스터 (스마트폰 & 생성 AI)", cat: "CLASS", target: "스마트폰을 능숙하게 다루고 최신 AI를 일상에 접목하고 싶은 분", dur: "60분 / 주 1회", sum: "모바일 뱅킹, 건강 앱, 여행 사진 보정 및 나만의 AI 비서 대화법을 친절히 실습합니다.", ins: "최준호 디지털 라이프 코치", tags: ["스마트폰 정복", "AI 활용", "디지털 자신감"] },
+      { id: "p7", title: "보태니컬 가드닝 & 웰니스 티 블렌딩", cat: "CLASS", target: "식물을 돌보고 자연의 향기를 만끽하며 소근육 감각을 깨우고 싶은 분", dur: "70분 / 격주", sum: "항산화 허브 식물을 직접 심고, 체질에 맞는 유기농 장수 차를 블렌딩하여 음미합니다.", ins: "윤예린 티소믈리에 & 가드너", tags: ["오감 힐링", "식물 테라피", "허브 블렌딩"] },
+      { id: "p8", title: "88 소셜 살롱 & 북클럽 티타임", cat: "LIFE", target: "품격 있는 대화와 지적 교류로 취향과 관심사를 함께 나눌 친구를 만나고 싶은 분", dur: "90분 / 주 1회", sum: "철학, 여행, 문화 예술 명작을 테마로 88 웰니스 라운지에서 커피와 차를 곁들인 나눔", ins: "한동욱 인문학 살롱 호스트", tags: ["웰니스 친구", "지적 대화", "소셜 네트워크"] },
+      { id: "p9", title: "지중해식 웰니스 장수 다이닝 워크숍", cat: "LIFE", target: "건강하고 맛있는 항염·항산화 식단을 집에서도 즐기고 싶은 분", dur: "60분 / 월 2회", sum: "올리브유, 통곡물, 신선한 해산물과 제철 채소를 활용한 영양 셰프의 시식 및 식단 코칭", ins: "임채원 임상영양사", tags: ["항염 식단", "지중해식", "영양 솔루션"] },
+      { id: "p10", title: "척추 감압 체형 교정 & 림프 순환 케어", cat: "CARE", target: "허리 디스크 부담, 목·어깨 결림, 만성 다리 부종이 있는 회원", dur: "50분 / 1:1 예약제", sum: "전문 물리치료사의 섬세한 수기 도수 이완과 온열 감압 기기로 림프 독소와 관절 압박을 해소합니다.", ins: "강민석 수석 물리치료사", tags: ["1:1 프라이빗", "척추 교정", "림프 부종 완화"] },
+      { id: "p11", title: "적외선 편백 스파 & 바이오 생체 리포트", cat: "CARE", target: "체온 면역력을 올리고 정기적으로 혈관·체성분 상태를 점검받고 싶은 분", dur: "45분 / 상시 예약", sum: "원적외선 히노끼 전신 온열 스파 후 자율신경 검사(HRV)와 인바디 정밀 측정을 통해 88 헬스 지표를 발행합니다.", ins: "송지현 전담 웰니스 간호사", tags: ["체온 면역", "정밀 리포트", "편백 스파"] }
+    ];
+
+    // MY 88 CHECK Questions
+    const sampleQuestions = [
+      { domainEn: "STRENGTH", domainKo: "근력 (Strength)", title: "무거운 장바구니를 들거나 계단을 오를 때 무릎과 다리에 힘이 든든하게 들어가나요?", help: "신체 점수: 일상 생활을 힘차게 유지하는 하체와 코어의 기초 지지력 평가" },
+      { domainEn: "MOBILITY", domainKo: "가동성 (Mobility)", title: "어깨를 뒤로 돌리거나 신발 끈을 묶을 때 관절이 걸림 없이 부드럽게 움직이나요?", help: "신체 점수: 관절의 유연성과 회전 가동 범위 평가" },
+      { domainEn: "BALANCE", domainKo: "균형감각 (Balance)", title: "눈을 뜨고 한 발로 20초 이상 흔들림 없이 설 수 있으며, 걸을 때 안정적인가요?", help: "신체 점수: 낙상을 예방하고 자세를 바르게 잡아주는 전정 밸런스 평가" },
+      { domainEn: "ENDURANCE", domainKo: "지구력 (Endurance)", title: "30분 이상 쉬지 않고 활기차게 걸어도 숨이 턱까지 차지 않고 호흡이 편안한가요?", help: "신체 점수: 여행과 여가 활동을 종일 즐길 수 있는 심폐 지구력 평가" },
+      { domainEn: "RECOVER", domainKo: "수면 & 회복 (Recover)", title: "밤에 중간에 자주 깨지 않고 깊이 잠들며, 아침에 개운하게 기상하시나요?", help: "생활 점수: 신체 면역력과 피로 물질을 청소하는 야간 숙면 및 리커버리 평가" },
+      { domainEn: "CONNECT", domainKo: "사회적 연결 (Connect)", title: "일주일에 2회 이상 지인, 친구와 만나 담소를 나누거나 클럽 활동에 참여하시나요?", help: "생활 점수: 고립감을 없애고 뇌 활력을 불어넣는 사회적 소셜 유대감 평가" },
+      { domainEn: "NOURISH", domainKo: "영양 식단 (Nourish)", title: "끼니마다 단백질(계란·생선·두부·고기)과 신선한 채소를 골고루 챙겨 드시나요?", help: "생활 점수: 신체 활력을 유지하고 전신 건강을 증진하는 균형 잡힌 장수 식단 평가" },
+      { domainEn: "LEARN", domainKo: "배움 & 호기심 (Learn)", title: "스마트폰 새 앱을 배우거나 독서, 강좌 등 새로운 지식을 적극적으로 탐구하시나요?", help: "생활 점수: 인지 능력을 활성화하고 뇌 시냅스를 확장하는 지속적 배움 평가" }
+    ];
+
+    // Daily Missions
+    let dailyMissions = [
+      { id: "m1", icon: "🚶", en: "MOVE", ko: "활동", title: "하루 7,000보 활기찬 걷기", desc: "엘리베이터 대신 계단 2개 층 오르기와 활기찬 보행", done: true },
+      { id: "m2", icon: "🧘", en: "MIND", ko: "마음챙김", title: "5분 복식호흡 & 감사 일기", desc: "복부로 깊게 숨을 들이마시고 고마운 일 세 가지 떠올리기", done: true },
+      { id: "m3", icon: "🥗", en: "NOURISH", ko: "영양", title: "끼니마다 단백질과 채소 챙기기", desc: "달걀, 생선, 두부 등 양질의 단백질 20g 섭취", done: true },
+      { id: "m4", icon: "🌙", en: "RECOVER", ko: "수면", title: "따뜻한 차 한 잔과 20분 릴랙스", desc: "잠들기 전 스마트폰을 멀리하고 심부 온열 이완", done: false },
+      { id: "m5", icon: "👥", en: "CONNECT", ko: "소셜", title: "친구에게 안부 전하기", desc: "소중한 사람과 10분 이상 즐겁게 대화 나누기", done: false },
+      { id: "m6", icon: "📚", en: "LEARN", ko: "배움", title: "스마트폰 새 기능 또는 칼럼 읽기", desc: "새로운 지식 한 가지를 배우고 두뇌 자극하기", done: true },
+      { id: "m7", icon: "⭐", en: "PURPOSE", ko: "목적", title: "오늘 나를 위한 한 가지 약속 지키기", desc: "작은 목표를 세우고 성취하는 하루의 보람", done: false },
+      { id: "m8", icon: "😄", en: "ENJOY", ko: "즐거움", title: "좋아하는 음악 들으며 미소 짓기", desc: "긍정적인 감정과 엔도르핀을 충전하는 시간", done: false }
+    ];
+
+    // App State
     let currentUser = null;
     let currentQuestionIdx = 0;
-    const questions = [
-      { domain: "신체 근력 (STRENGTH)", title: "의자에서 손을 짚지 않고 일어나는 것이 수월하십니까?", desc: "하지 근력은 독립적인 일상생활과 보행 안정성을 결정짓는 핵심 지표입니다." },
-      { domain: "관절 가동성 (MOBILITY)", title: "양팔을 머리 위로 올려 기지개를 켤 때 어깨에 불편함이 없으십니까?", desc: "어깨와 척추 관절의 유연성은 원활한 상체 움직임의 기초입니다." },
-      { domain: "동적 밸런스 (BALANCE)", title: "한 발로 서서 15초 이상 균형을 유지할 수 있으십니까?", desc: "고유수용감각과 균형 능력은 낙상 예방에 가장 중요한 요소입니다." },
-      { domain: "심폐 지구력 (ENDURANCE)", title: "가벼운 조깅이나 빠른 걸음으로 20분 이상 지치지 않고 걸으실 수 있습니까?", desc: "심폐 활력은 전신 산소 공급과 혈관 건강을 책임집니다." },
-      { domain: "수면 & 회복 (RECOVER)", title: "아침에 일어났을 때 개운하고 활력이 충분하다고 느끼십니까?", desc: "깊은 수면은 뇌의 노폐물 배출과 신체 세포 재생의 골든타임입니다." },
-      { domain: "소셜 교류 (CONNECT)", title: "일주일에 2회 이상 친구나 지인과 의미 있는 대화와 만남을 가지십니까?", desc: "사회적 유대감은 뇌 활성화와 정서적 안정에 핵심적인 역할을 합니다." },
-      { domain: "영양 균형 (NOURISH)", title: "끼니마다 단백질(계란, 생선, 두부 등)과 신선한 채소를 고루 챙겨 드십니까?", desc: "양질의 단백질 공급은 근육 손실을 막고 면역력을 지킵니다." },
-      { domain: "두뇌 배움 (LEARN)", title: "새로운 스마트폰 기능이나 독서, 취미 활동을 즐겁게 배우고 계십니까?", desc: "매일 새로운 자극은 신경 가소성을 높여 뇌를 젊게 유지합니다." }
-    ];
     let userAnswers = [];
+    let selectedCategoryFilter = "ALL";
 
-    // Tab Navigation
+    // Tab Switching
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
@@ -1050,6 +1514,32 @@
       if (targetTab) targetTab.classList.add('active');
       if (targetNav) targetNav.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (tabId === 'services') {
+        renderServices();
+      } else if (tabId === 'daily') {
+        renderDailyMissions();
+      }
+    }
+
+    // 88 Longevity Matrix Tab (Physical vs Lifestyle)
+    function toggleMatrixTab(type) {
+      const pTab = document.getElementById('tab-btn-physical');
+      const lTab = document.getElementById('tab-btn-lifestyle');
+      const pGrid = document.getElementById('matrix-physical');
+      const lGrid = document.getElementById('matrix-lifestyle');
+
+      if (type === 'physical') {
+        pTab.classList.add('active');
+        lTab.classList.remove('active');
+        pGrid.style.display = 'flex';
+        lGrid.style.display = 'none';
+      } else {
+        lTab.classList.add('active');
+        pTab.classList.remove('active');
+        lGrid.style.display = 'flex';
+        pGrid.style.display = 'none';
+      }
     }
 
     // Drawer Controls
@@ -1066,6 +1556,90 @@
       document.getElementById('modal-' + id).classList.remove('open');
     }
 
+    // Services Filter & Render
+    function openServicesCategory(catKey) {
+      switchTab('services');
+      filterServices(catKey);
+    }
+
+    function filterServices(catKey) {
+      selectedCategoryFilter = catKey;
+      document.querySelectorAll('.filter-chip').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('chip-' + catKey);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const banner = document.getElementById('service-cat-banner');
+      if (catKey !== 'ALL' && categoryInfo[catKey]) {
+        banner.style.display = 'block';
+        const info = categoryInfo[catKey];
+        document.getElementById('cat-banner-icon').innerText = info.icon;
+        document.getElementById('cat-banner-en').innerText = info.en;
+        document.getElementById('cat-banner-sub').innerText = info.sub;
+        document.getElementById('cat-banner-desc').innerText = info.desc;
+      } else {
+        banner.style.display = 'none';
+      }
+
+      renderServices();
+    }
+
+    function renderServices() {
+      // 1. Render Facilities
+      const fContainer = document.getElementById('facilities-container');
+      const filteredF = (selectedCategoryFilter === 'ALL')
+        ? centerFacilities
+        : centerFacilities.filter(f => f.cat === selectedCategoryFilter);
+
+      fContainer.innerHTML = filteredF.map(f => `
+        <div class="facility-card">
+          <div class="facility-header">
+            <span style="font-size:20px;">${f.icon}</span>
+            <span class="facility-name">${f.name}</span>
+          </div>
+          <div class="facility-feature">✨ ${f.feature}</div>
+          <p class="facility-desc">${f.desc}</p>
+        </div>
+      `).join('');
+
+      // 2. Render Programs
+      const pContainer = document.getElementById('programs-container');
+      const filteredP = (selectedCategoryFilter === 'ALL')
+        ? allServicePrograms
+        : allServicePrograms.filter(p => p.cat === selectedCategoryFilter);
+
+      pContainer.innerHTML = filteredP.map(p => `
+        <div class="program-card">
+          <span class="prog-badge ${p.cat.toLowerCase()}">${p.cat}</span>
+          <h4 class="prog-title">${p.title}</h4>
+          <div class="prog-target">🎯 ${p.target}</div>
+          <p class="prog-summary">${p.sum}</p>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;">
+            ${p.tags.map(t => `<span style="background:var(--primary-subtle); color:var(--primary-dark); font-size:11px; padding:3px 7px; border-radius:4px; font-weight:600;">#${t}</span>`).join('')}
+          </div>
+          <div class="prog-meta-row">
+            <div>
+              <strong>${p.ins}</strong> · ${p.dur}
+            </div>
+            <button onclick="openBooking('${p.title}', '${p.ins}', '${p.dur}')" style="padding:6px 12px; background:var(--primary); color:#fff; border:none; border-radius:8px; font-size:11.5px; font-weight:700; cursor:pointer;">
+              상담 & 예약 신청
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openBooking(title, ins, dur) {
+      document.getElementById('booking-prog-title').innerText = title;
+      document.getElementById('booking-instructor').innerText = ins;
+      document.getElementById('booking-duration').innerText = dur;
+      openModal('booking');
+    }
+
+    function submitBooking() {
+      alert("프로그램 상담 및 예약 신청이 완료되었습니다.\n전담 웰니스 코디네이터가 빠른 시일 내에 연락드리겠습니다.");
+      closeModal('booking');
+    }
+
     // MY 88 CHECK Logic
     function startCheck() {
       currentQuestionIdx = 0;
@@ -1077,23 +1651,25 @@
     }
 
     function renderQuestion() {
-      const q = questions[currentQuestionIdx];
-      document.getElementById('q-step-text').innerText = `QUESTION ${currentQuestionIdx + 1} / ${questions.length}`;
-      document.getElementById('q-domain-text').innerText = q.domain;
+      const q = sampleQuestions[currentQuestionIdx];
+      document.getElementById('q-step-text').innerText = `QUESTION ${currentQuestionIdx + 1} / ${sampleQuestions.length}`;
+      document.getElementById('q-domain-text').innerText = `${q.domainKo} • ${q.domainEn}`;
       document.getElementById('q-title-text').innerText = q.title;
-      document.getElementById('q-desc-text').innerText = q.desc;
+      document.getElementById('q-help-text').innerText = q.help;
+      const progressPercent = ((currentQuestionIdx + 1) / sampleQuestions.length) * 100;
+      document.getElementById('q-progress-bar').style.width = progressPercent + '%';
     }
 
     function selectScore(score) {
       userAnswers.push(score);
-      if (currentQuestionIdx < questions.length - 1) {
+      if (currentQuestionIdx < sampleQuestions.length - 1) {
         currentQuestionIdx++;
         renderQuestion();
       } else {
-        // Finished evaluation!
+        // Completed all 8 questions!
         document.getElementById('check-eval').style.display = 'none';
         if (!currentUser) {
-          // Gatekeeper: Require auth to view result
+          // Gatekeeper Triggered
           openModal('gatekeeper');
           document.getElementById('check-intro').style.display = 'block';
         } else {
@@ -1106,25 +1682,58 @@
       document.getElementById('check-intro').style.display = 'none';
       document.getElementById('check-eval').style.display = 'none';
       document.getElementById('check-result').style.display = 'block';
+
       const sum = userAnswers.reduce((a, b) => a + b, 0);
-      const avg = Math.round((sum / (userAnswers.length * 5)) * 100) || 84;
+      const avg = Math.round((sum / (sampleQuestions.length * 5)) * 100) || 84;
       document.getElementById('result-score-val').innerText = avg;
       if (currentUser) {
         document.getElementById('result-user-title').innerText = `${currentUser.name} 회원님의 88 종합 활력 지수`;
       }
     }
 
+    // Daily 88 Checklist Logic
+    function renderDailyMissions() {
+      const container = document.getElementById('daily-missions-list');
+      const completedCount = dailyMissions.filter(m => m.done).length;
+      const percent = Math.round((completedCount / dailyMissions.length) * 100);
+
+      document.getElementById('daily-vitality-text').innerText = percent + '%';
+      document.getElementById('daily-gauge-bar').style.width = percent + '%';
+      document.getElementById('daily-status-desc').innerText = 
+        `${dailyMissions.length}개 중 ${completedCount}개 완료! ` + 
+        (percent === 100 ? "완벽한 하루입니다! 88 활력이 가득 찼습니다. 🎉" : "조금만 더 힘내서 팔팔한 하루를 완성해보세요.");
+
+      container.innerHTML = dailyMissions.map((m, idx) => `
+        <div class="mission-item ${m.done ? 'completed' : ''}" onclick="toggleMission(${idx})">
+          <div class="custom-checkbox"></div>
+          <div style="flex:1;">
+            <div style="font-size:11px; font-weight:800; color:var(--primary); margin-bottom:2px;">
+              ${m.icon} ${m.ko} (${m.en})
+            </div>
+            <div style="font-size:14px; font-weight:800; color:var(--text-dark); margin-bottom:2px;">
+              ${m.title}
+            </div>
+            <div style="font-size:12px; color:var(--text-muted); line-height:1.4;">
+              ${m.desc}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleMission(idx) {
+      dailyMissions[idx].done = !dailyMissions[idx].done;
+      renderDailyMissions();
+    }
+
     // Auth Handlers
     function handleLogin() {
       const email = document.getElementById('login-email').value.trim();
-      currentUser = {
-        name: "김재원",
-        email: email || "nexthealthcare8@gmail.com"
-      };
+      currentUser = { name: "김재원", email: email || "nexthealthcare8@gmail.com" };
       updateAuthUI();
       closeModal('login');
-      alert(`${currentUser.name}님 환영합니다!`);
-      if (userAnswers.length === questions.length) {
+      alert(`${currentUser.name}님, 88 WELLNESS에 오신 것을 환영합니다!`);
+      if (userAnswers.length === sampleQuestions.length) {
         showResult();
       }
     }
@@ -1135,8 +1744,8 @@
       currentUser = { name, email };
       updateAuthUI();
       closeModal('signup');
-      alert(`회원가입이 완료되었습니다, ${name}님!`);
-      if (userAnswers.length === questions.length) {
+      alert(`회원가입이 완료되었습니다, ${name}님!\nMY 88 CHECK 분석 리포트가 안전하게 연동되었습니다.`);
+      if (userAnswers.length === sampleQuestions.length) {
         showResult();
       }
     }
@@ -1168,6 +1777,12 @@
         loginMenu.style.display = 'flex';
       }
     }
+
+    // Initial Setup
+    window.addEventListener('DOMContentLoaded', () => {
+      renderServices();
+      renderDailyMissions();
+    });
   </script>
 </body>
 </html>
