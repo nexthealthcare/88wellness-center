@@ -1,0 +1,6 @@
+{
+  "name": "88 WELLNESS",
+  "description": "더 오래도록 활동하기 위한 복합문화공간 88 WELLNESS와 88 LONGEVITY 프로그램 & MY 88 CHECK",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
