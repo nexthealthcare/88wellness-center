@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>88 WELLNESS - 좋아하는 삶을, 오래도록 팔팔하게</title>
+  <meta name="description" content="운동과 문화. 사회적 교류가 있는 웰니스 라이프센터. 8대 신체조건과 8대 생활실천을 위한 맞춤형 웰니스 시스템." />
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-dark: #053825;
+      --primary: #00563B;
+      --primary-medium: #136F4E;
+      --primary-light: #E2F0E8;
+      --gold: #C5A059;
+      --gold-dark: #9A7B39;
+      --gold-light: #F9F3E5;
+      --bg: #F8FAF7;
+      --card-bg: #FFFFFF;
+      --text-dark: #0F241A;
+      --text-medium: #3F584C;
+      --text-muted: #6E867A;
+      --border: #DDE6E0;
+      --coral: #D65842;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text-dark);
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .app-container {
+      width: 100%;
+      max-width: 480px;
+      background-color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 0 30px rgba(0,0,0,0.06);
+    }
+    /* Top Header */
+    header {
+      background-color: var(--primary);
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .header-brand {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .brand-88 {
+      color: var(--gold);
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+    .brand-wellness {
+      color: #fff;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .brand-sub {
+      color: rgba(255,255,255,0.8);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      margin-top: 1px;
+    }
+    .menu-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary-dark);
+      border: 1px solid rgba(197, 160, 89, 0.6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .menu-btn:hover {
+      background: #022015;
+    }
+    .menu-btn span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+    /* Navigation Bar */
+    nav.bottom-nav {
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      background-color: #fff;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 4px calc(8px + env(safe-area-inset-bottom));
+      z-index: 90;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.03);
+    }
+    .nav-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 6px 0;
+      transition: all 0.2s;
+    }
+    .nav-item svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+    .nav-item.active {
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+    .nav-item.active svg {
+      fill: var(--primary-dark);
+    }
+    /* Main Content Area */
+    main {
+      flex: 1;
+      background-color: var(--bg);
+      padding-bottom: 24px;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    /* Home Hero */
+    .hero-banner {
+      background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #fff;
+      padding: 24px 20px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(197, 160, 89, 0.2);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .hero-title {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+    .hero-title span {
+      color: var(--gold);
+    }
+    .hero-desc {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: #053825;
+      border: none;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      border: 1.2px solid rgba(255,255,255,0.7);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    /* Cards & Grids */
+    .section-padding {
+      padding: 20px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .service-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    .service-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .service-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+    .service-sub {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    /* Mascot Banner */
+    .mascot-card {
+      background: var(--gold-light);
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      border-radius: 18px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+    }
+    .mascot-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--primary-dark);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+    /* MY 88 CHECK Form */
+    .check-container {
+      padding: 20px;
+    }
+    .question-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      margin-bottom: 20px;
+    }
+    .q-step {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold-dark);
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .q-domain {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .q-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+    .q-desc {
+      font-size: 12.5px;
+      color: var(--text-medium);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .score-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .score-btn {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .score-btn.selected {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .score-btn:hover:not(.selected) {
+      background: var(--primary-light);
+      border-color: var(--primary);
+    }
+    /* Drawer (Side Menu) */
+    .drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 200;
+      display: none;
+      backdrop-filter: blur(2px);
+    }
+    .drawer-overlay.open {
+      display: block;
+    }
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 300px;
+      height: 100vh;
+      background: #fff;
+      z-index: 201;
+      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .drawer.open {
+      right: 0;
+    }
+    .drawer-header {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 24px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .drawer-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .drawer-menu {
+      padding: 16px 0;
+      flex: 1;
+    }
+    .menu-link {
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .menu-link:hover {
+      background: var(--bg);
+    }
+    .menu-link span.icon {
+      font-size: 18px;
+    }
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 300;
+      padding: 20px;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal-box {
+      background: #fff;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 420px;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 24px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .modal-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+    .modal-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-label {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .form-input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: var(--primary);
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .policy-box {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 11.5px;
+      color: var(--text-medium);
+      line-height: 1.6;
+      max-height: 260px;
+      overflow-y: auto;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .footer-info {
+      padding: 24px 20px;
+      background: #f1f4f1;
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Bar -->
+    <header>
+      <div class="header-brand">
+        <div class="brand-title">
+          <span class="brand-88">88</span>
+          <span class="brand-wellness">WELLNESS</span>
+        </div>
+        <span class="brand-sub">AGELESS PERFORMANCE CENTER</span>
+      </div>
+      <button class="menu-btn" onclick="toggleDrawer(true)" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <!-- Main Screens -->
+    <main>
+      <!-- TAB 1: HOME -->
+      <section id="tab-home" class="tab-content active">
+        <div class="hero-banner">
+          <div class="hero-badge">88 LONGEVITY SYSTEM</div>
+          <h1 class="hero-title">
+            좋아하는 삶을,<br />
+            오래도록 <span>팔팔하게</span>
+          </h1>
+          <p class="hero-desc">
+            운동과 문화. 사회적 교류가 있는 웰니스 라이프센터.<br />
+            8대 신체조건과 8대 생활실천을 위한 맞춤형 웰니스 시스템을 만나보세요.
+          </p>
+          <div class="hero-cta">
+            <button class="btn-gold" onclick="switchTab('check')">
+              MY 88 CHECK 무료 진단 →
+            </button>
+            <button class="btn-outline-white" onclick="openModal('company')">
+              센터 소개
+            </button>
+          </div>
+        </div>
+
+        <div class="section-padding">
+          <div class="section-header">
+            <h2 class="section-title">🌿 88 복합문화공간</h2>
+            <span style="font-size: 12px; color: var(--gold-dark); font-weight:700;">시설 둘러보기</span>
+          </div>
+
+          <div class="service-grid">
+            <div class="service-card" onclick="openModal('company')">
+              <div class="service-icon">🏋️</div>
+              <div class="service-name">스마트 바이오 짐</div>
+              <div class="service-sub">생체역학 맞춤 근력 & 밸런스 운동</div>
+            </div>
+            <div class="service-card" onclick="openModal('company')">
+              <div class="service-icon">☕</div>
+              <div class="service-name">88 웰니스 라운지</div>
+              <div class="service-sub">항산화 블렌딩 티 & 소셜 살롱</div>
+            </div>
+            <div class="service-card" onclick="openModal('company')">
+              <div class="service-icon">🧖</div>
+              <div class="service-name">원적외선 편백 스파</div>
+              <div class="service-sub">심부 체온 상승 & 자율신경 회복</div>
+            </div>
+            <div class="service-card" onclick="openModal('company')">
+              <div class="service-icon">🩺</div>
+              <div class="service-name">1:1 프라이빗 케어</div>
+              <div class="service-sub">도수 교정 & 체형 밸런스 리셋</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 18px;">
+            <div class="mascot-card" onclick="openModal('mascot')">
+              <div class="mascot-avatar">🐢</div>
+              <div>
+                <div style="font-weight: 800; font-size: 15px; color: var(--primary-dark); margin-bottom: 4px;">
+                  터틀88의 장수 이야기
+                </div>
+                <div style="font-size: 12px; color: var(--text-medium); line-height: 1.45;">
+                  "느리지만 멈추지 않는 건강한 걸음, 88세까지 청년처럼 누리는 웰니스 이야기"
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: MY 88 CHECK -->
+      <section id="tab-check" class="tab-content">
+        <div class="check-container">
+          <!-- Non-evaluated State -->
+          <div id="check-intro" style="display: block;">
+            <div style="text-align: center; padding: 24px 0 16px;">
+              <span class="hero-badge" style="background:var(--gold-light); color:var(--gold-dark);">FREE ASSESSMENT</span>
+              <h2 style="font-size: 24px; font-weight: 900; color: var(--primary-dark); margin: 8px 0;">MY 88 CHECK 진단</h2>
+              <p style="font-size: 13px; color: var(--text-medium); line-height: 1.5;">
+                회원가입 없이 누구나 8개 핵심 문항에 무료 응답할 수 있습니다.<br />
+                나만의 88 활력 지수를 확인해보세요!
+              </p>
+            </div>
+
+            <div class="card">
+              <div style="font-weight: 700; font-size: 14px; color: var(--primary-dark); margin-bottom: 10px;">📋 진단 안내</div>
+              <p style="font-size: 12px; color: var(--text-medium); line-height: 1.6;">
+                • 8대 신체조건 (근력, 가동성, 밸런스, 심폐지구력 등)<br />
+                • 8대 생활실천 (활동, 마음챙김, 영양, 수면, 교류 등)<br />
+                • 소요 시간: 약 2분 (회원가입 불필요)<br />
+                • <strong>진단 후 회원가입 시 나만의 1:1 맞춤 추천 플랜 영구 보관</strong>
+              </p>
+            </div>
+
+            <button class="btn-submit" onclick="startCheck()" style="margin-top: 10px;">
+              MY 88 CHECK 무료 진단 시작하기 →
+            </button>
+          </div>
+
+          <!-- Evaluation Questions View -->
+          <div id="check-eval" style="display: none;">
+            <div class="question-card">
+              <div class="q-step" id="q-step-text">QUESTION 1 / 8</div>
+              <div class="q-domain" id="q-domain-text">신체 근력 (STRENGTH)</div>
+              <h3 class="q-title" id="q-title-text">의자에서 손을 짚지 않고 일어나는 것이 수월하십니까?</h3>
+              <p class="q-desc" id="q-desc-text">하지 근력은 독립적인 일상생활과 보행 안정성을 결정짓는 핵심 지표입니다.</p>
+
+              <div class="score-buttons">
+                <button class="score-btn" onclick="selectScore(5)">5점 - 매우 그렇다 (아주 수월함)</button>
+                <button class="score-btn" onclick="selectScore(4)">4점 - 대체로 그렇다 (약간 힘씀)</button>
+                <button class="score-btn" onclick="selectScore(3)">3점 - 보통이다 (상황에 따라 다름)</button>
+                <button class="score-btn" onclick="selectScore(2)">2점 - 조금 어렵다 (가끔 손 짚음)</button>
+                <button class="score-btn" onclick="selectScore(1)">1점 - 매우 어렵다 (손 짚어야 함)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Result View (Unlocked after Login/Signup) -->
+          <div id="check-result" style="display: none;">
+            <div class="card" style="background: var(--primary-dark); color: #fff; text-align: center; padding: 26px 20px;">
+              <div style="color: var(--gold); font-weight: 800; font-size: 12px; letter-spacing: 1px;">MY 88 VITALITY REPORT</div>
+              <h3 style="font-size: 20px; font-weight: 800; margin: 8px 0 16px;" id="result-user-title">회원님의 88 종합 활력 지수</h3>
+
+              <div style="width: 90px; height: 90px; border-radius: 50%; border: 3px solid var(--gold); margin: 0 auto 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--primary);">
+                <span style="font-size: 32px; font-weight: 900; color: #fff;" id="result-score-val">84</span>
+                <span style="font-size: 10px; color: var(--gold); font-weight: 700;">/ 100점</span>
+              </div>
+
+              <p style="font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5;">
+                상위 15% 수준의 우수한 웰니스 밸런스를 유지하고 계십니다.<br />
+                맞춤 추천: <strong>수면 회복 & 소셜 살롱 프로그램</strong>
+              </p>
+            </div>
+
+            <div class="card">
+              <div style="font-weight: 700; font-size: 14px; color: var(--primary-dark); margin-bottom: 8px;">✨ 1:1 맞춤 추천 플랜</div>
+              <p style="font-size: 12.5px; color: var(--text-medium); line-height: 1.6;">
+                • 주 2회 스마트 바이오 짐 코어 안정화 세션<br />
+                • 원적외선 편백 스파를 통한 주 1회 심부 이완<br />
+                • 88 살롱 티타임 모임 참여로 소셜 도파민 활성화
+              </p>
+            </div>
+
+            <button class="btn-submit" onclick="startCheck()" style="background: var(--primary-medium);">
+              다시 진단하기
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: SERVICES -->
+      <section id="tab-services" class="tab-content">
+        <div class="section-padding">
+          <div class="section-header">
+            <h2 class="section-title">복합문화공간 시설 & 프로그램</h2>
+          </div>
+          <div class="card">
+            <div style="font-size: 15px; font-weight: 800; color: var(--primary-dark); margin-bottom: 6px;">
+              스마트 바이오 짐 (Smart Bio Gym)
+            </div>
+            <p style="font-size: 12.5px; color: var(--text-medium); line-height: 1.6;">
+              독일 정밀 바이오메카닉 운동 기구와 AI 자세 분석 센서를 탑재하여 관절 부담 없이 근감소를 예방하는 프리미엄 운동 공간.
+            </p>
+          </div>
+          <div class="card">
+            <div style="font-size: 15px; font-weight: 800; color: var(--primary-dark); margin-bottom: 6px;">
+              88 웰니스 라운지 (Wellness Lounge)
+            </div>
+            <p style="font-size: 12.5px; color: var(--text-medium); line-height: 1.6;">
+              항산화 한방 허브티, 두뇌 활력 오메가 스낵과 함께 웰니스 강좌 및 문화 예술 살롱이 열리는 복합 소셜 공간.
+            </p>
+          </div>
+          <div class="card">
+            <div style="font-size: 15px; font-weight: 800; color: var(--primary-dark); margin-bottom: 6px;">
+              원적외선 편백 스파 (Hinoki Spa)
+            </div>
+            <p style="font-size: 12.5px; color: var(--text-medium); line-height: 1.6;">
+              피톤치드 편백나무와 심부 원적외선 온열 테라피로 면역력과 혈액 순환을 리셋하는 프라이빗 회복 공간.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: DAILY 88 -->
+      <section id="tab-daily" class="tab-content">
+        <div class="section-padding">
+          <div class="section-header">
+            <h2 class="section-title">데일리 88 실천</h2>
+          </div>
+          <div class="card">
+            <div style="font-size: 13.5px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px;">
+              오늘의 8대 웰니스 미션
+            </div>
+            <div style="font-size: 12.5px; color: var(--text-medium); line-height: 1.8;">
+              ☑️ 하루 7,000보 활기찬 걷기 (MOVE)<br />
+              ☑️ 5분 깊은 복식호흡 & 감사 명상 (MIND)<br />
+              ☑️ 끼니마다 단백질 챙기기 (NOURISH)<br />
+              ⬜ 따뜻한 차 한 잔과 20분 릴랙스 (RECOVER)<br />
+              ⬜ 88 살롱 친구에게 안부 전하기 (CONNECT)<br />
+              ☑️ 스마트폰 새 기능 또는 칼럼 읽기 (LEARN)
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" onclick="switchTab('home')" id="nav-home">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        소개 & 홈
+      </button>
+      <button class="nav-item" onclick="switchTab('check')" id="nav-check">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+        88 CHECK
+      </button>
+      <button class="nav-item" onclick="switchTab('services')" id="nav-services">
+        <svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg>
+        복합문화공간
+      </button>
+      <button class="nav-item" onclick="switchTab('daily')" id="nav-daily">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        데일리 88
+      </button>
+    </nav>
+
+    <!-- Footer Information -->
+    <div class="footer-info">
+      <strong>(주)넥스트헬스케어</strong> | 대표이사: 김재원<br />
+      대표전화: 010-8254-8883 | 이메일: nexthealthcare8@gmail.com<br />
+      브랜드: 88 WELLNESS · 터틀88 | 사업분야: 프라이빗 웰니스 라이프센터
+    </div>
+
+    <!-- Side Navigation Drawer -->
+    <div class="drawer-overlay" id="drawer-overlay" onclick="toggleDrawer(false)"></div>
+    <div class="drawer" id="side-drawer">
+      <div class="drawer-header">
+        <div>
+          <div style="font-size: 20px; font-weight: 900; color: var(--gold);">88 WELLNESS</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.7); letter-spacing: 1px;">AGELESS PERFORMANCE</div>
+        </div>
+        <button class="drawer-close" onclick="toggleDrawer(false)">✕</button>
+      </div>
+
+      <!-- Auth Card in Drawer -->
+      <div style="padding: 16px; background: var(--gold-light); border-bottom: 1px solid var(--border);" id="drawer-auth-box">
+        <div id="drawer-guest-view">
+          <div style="font-size: 13px; font-weight: 700; color: var(--primary-dark);">로그인이 필요합니다</div>
+          <div style="font-size: 11px; color: var(--text-medium); margin: 4px 0 10px;">회원가입 후 MY 88 CHECK 분석 리포트를 보관하세요.</div>
+          <div style="display: flex; gap: 8px;">
+            <button onclick="toggleDrawer(false); openModal('signup');" style="flex:1; padding:8px; background:var(--primary); color:#fff; border:none; border-radius:6px; font-size:12px; font-weight:700; cursor:pointer;">회원가입</button>
+            <button onclick="toggleDrawer(false); openModal('login');" style="flex:1; padding:8px; background:#fff; color:var(--primary); border:1px solid var(--primary); border-radius:6px; font-size:12px; font-weight:700; cursor:pointer;">로그인</button>
+          </div>
+        </div>
+        <div id="drawer-user-view" style="display: none;">
+          <div style="font-size: 14px; font-weight: 800; color: var(--primary-dark);" id="logged-user-name">김재원 회원님</div>
+          <div style="font-size: 11.5px; color: var(--text-medium);" id="logged-user-email">nexthealthcare8@gmail.com</div>
+          <button onclick="handleLogout()" style="margin-top: 8px; background: none; border: none; font-size: 11.5px; color: var(--coral); cursor: pointer; font-weight:600;">로그아웃</button>
+        </div>
+      </div>
+
+      <div class="drawer-menu">
+        <div class="menu-link" onclick="toggleDrawer(false); openModal('company');">
+          <span class="icon">🏢</span> 회사소개 ((주)넥스트헬스케어)
+        </div>
+        <div class="menu-link" onclick="toggleDrawer(false); openModal('policy');">
+          <span class="icon">🛡️</span> 개인정보처리방침
+        </div>
+        <div class="menu-link" onclick="toggleDrawer(false); openModal('signup');" id="drawer-menu-signup">
+          <span class="icon">👤</span> 회원가입
+        </div>
+        <div class="menu-link" onclick="toggleDrawer(false); openModal('login');" id="drawer-menu-login">
+          <span class="icon">🔑</span> 로그인
+        </div>
+        <hr style="border:none; border-top:1px solid var(--border); margin:8px 0;" />
+        <div class="menu-link" onclick="toggleDrawer(false); switchTab('home');">
+          <span class="icon">🏠</span> 소개 & 홈
+        </div>
+        <div class="menu-link" onclick="toggleDrawer(false); switchTab('check');">
+          <span class="icon">📋</span> MY 88 CHECK 진단
+        </div>
+        <div class="menu-link" onclick="toggleDrawer(false); switchTab('services');">
+          <span class="icon">🏋️</span> 복합문화공간 시설
+        </div>
+        <div class="menu-link" onclick="toggleDrawer(false); openModal('mascot');">
+          <span class="icon">🐢</span> 터틀88 마스코트 이야기
+        </div>
+      </div>
+
+      <div style="padding: 16px; background: #fafafa; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-muted);">
+        고객센터: 010-8254-8883<br />
+        문의: nexthealthcare8@gmail.com
+      </div>
+    </div>
+
+    <!-- MODAL: LOGIN -->
+    <div class="modal-overlay" id="modal-login">
+      <div class="modal-box">
+        <button class="modal-close-btn" onclick="closeModal('login')">✕</button>
+        <h3 class="modal-title">로그인</h3>
+        <p class="modal-sub">88 WELLNESS 회원 서비스</p>
+
+        <div class="form-group">
+          <label class="form-label">이메일 (아이디)</label>
+          <input type="email" id="login-email" class="form-input" placeholder="nexthealthcare8@gmail.com" value="nexthealthcare8@gmail.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">비밀번호</label>
+          <input type="password" id="login-pw" class="form-input" placeholder="비밀번호" value="123456" />
+        </div>
+        <button class="btn-submit" onclick="handleLogin()" style="margin-top: 10px;">로그인</button>
+
+        <div style="margin-top: 14px; text-align: center; font-size: 12px;">
+          아직 회원이 아니신가요? 
+          <span style="color:var(--primary); font-weight:700; cursor:pointer;" onclick="closeModal('login'); openModal('signup');">회원가입</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: SIGN UP -->
+    <div class="modal-overlay" id="modal-signup">
+      <div class="modal-box">
+        <button class="modal-close-btn" onclick="closeModal('signup')">✕</button>
+        <h3 class="modal-title">회원가입</h3>
+        <p class="modal-sub">맞춤 웰니스 리포트 보관 및 프로그램 예약</p>
+
+        <div class="form-group">
+          <label class="form-label">이름 (실명)</label>
+          <input type="text" id="reg-name" class="form-input" placeholder="홍길동" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">이메일 (아이디)</label>
+          <input type="email" id="reg-email" class="form-input" placeholder="name@example.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">연락처 (휴대폰)</label>
+          <input type="tel" id="reg-phone" class="form-input" placeholder="010-0000-0000" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">비밀번호 (6자 이상)</label>
+          <input type="password" id="reg-pw" class="form-input" placeholder="비밀번호" />
+        </div>
+
+        <div style="background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:10px; margin-bottom:14px; font-size:12px;">
+          <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;">
+            <input type="checkbox" id="reg-agree-privacy" checked />
+            <label for="reg-agree-privacy" style="flex:1;">[필수] 개인정보 수집 및 이용 동의</label>
+            <span style="color:var(--primary); font-weight:700; cursor:pointer;" onclick="openModal('policy')">전문보기</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <input type="checkbox" id="reg-agree-terms" checked />
+            <label for="reg-agree-terms">[필수] 서비스 이용약관 동의</label>
+          </div>
+        </div>
+
+        <button class="btn-submit" onclick="handleSignUp()">회원가입 완료</button>
+      </div>
+    </div>
+
+    <!-- MODAL: PRIVACY POLICY -->
+    <div class="modal-overlay" id="modal-policy">
+      <div class="modal-box">
+        <button class="modal-close-btn" onclick="closeModal('policy')">✕</button>
+        <h3 class="modal-title">개인정보처리방침</h3>
+        <p class="modal-sub">(주)넥스트헬스케어 · Google Play 개발자 정책 준수</p>
+
+        <div class="policy-box">
+          <strong>제1조 (수집하는 개인정보 항목)</strong><br />
+          1) 필수 항목: 성명, 이메일(계정 ID), 비밀번호, 휴대폰 번호<br />
+          2) 서비스 생성 항목: MY 88 CHECK 자가진단 응답 기록, 88 지표 점수<br /><br />
+
+          <strong>제2조 (수집 및 이용 목적)</strong><br />
+          - 회원 식별 및 맞춤 웰니스 리포트 영구 저장/열람 제공<br />
+          - 88 복합문화공간 시설 및 1:1 컨시어지 예약 관리<br /><br />
+
+          <strong>제3조 (보유 및 이용 기간)</strong><br />
+          - 원칙적으로 회원 탈퇴 시 지체 없이 영구 파기합니다.<br /><br />
+
+          <strong>제4조 (개인정보 보호책임자)</strong><br />
+          • 회사명: (주)넥스트헬스케어<br />
+          • 대표이사 및 개인정보 보호책임자: 김재원<br />
+          • 연락처: 010-8254-8883 | 이메일: nexthealthcare8@gmail.com
+        </div>
+
+        <button class="btn-submit" onclick="closeModal('policy')">확인</button>
+      </div>
+    </div>
+
+    <!-- MODAL: COMPANY INTRO -->
+    <div class="modal-overlay" id="modal-company">
+      <div class="modal-box">
+        <button class="modal-close-btn" onclick="closeModal('company')">✕</button>
+        <h3 class="modal-title">회사소개</h3>
+        <p class="modal-sub">(주)넥스트헬스케어 · NEXT HEALTHCARE</p>
+
+        <div class="card" style="background:var(--primary-dark); color:#fff;">
+          <div style="color:var(--gold); font-size:11px; font-weight:800;">OUR VISION</div>
+          <div style="font-size:16px; font-weight:800; margin:4px 0;">좋아하는 삶을, 오래도록 팔팔하게</div>
+          <p style="font-size:12px; color:rgba(255,255,255,0.85); line-height:1.5;">
+            운동과 문화. 사회적 교류가 있는 웰니스 라이프센터 솔루션.
+          </p>
+        </div>
+
+        <div style="background:var(--gold-light); border:1px solid rgba(197,160,89,0.5); border-radius:12px; padding:12px; font-size:12px; margin-bottom:16px;">
+          <strong>• 상호명:</strong> (주)넥스트헬스케어<br />
+          <strong>• 대표이사:</strong> 김재원<br />
+          <strong>• 대표전화:</strong> 010-8254-8883<br />
+          <strong>• 대표메일:</strong> nexthealthcare8@gmail.com<br />
+          <strong>• 핵심 브랜드:</strong> 88 WELLNESS · 터틀88
+        </div>
+
+        <button class="btn-submit" onclick="closeModal('company')">확인</button>
+      </div>
+    </div>
+
+    <!-- MODAL: MASCOT STORY -->
+    <div class="modal-overlay" id="modal-mascot">
+      <div class="modal-box" style="text-align:center;">
+        <button class="modal-close-btn" onclick="closeModal('mascot')">✕</button>
+        <div style="font-size: 48px; margin-bottom: 8px;">🐢</div>
+        <h3 class="modal-title">터틀88 마스코트 이야기</h3>
+        <p class="modal-sub">88세까지 건강하게 누리는 삶의 지혜</p>
+
+        <p style="font-size: 13px; color: var(--text-medium); line-height: 1.6; text-align: left; margin-bottom: 18px;">
+          거북이는 결코 서두르지 않습니다. 하지만 올바른 방향으로 멈추지 않고 나아갑니다.<br /><br />
+          88 WELLNESS의 마스코트 <strong>'터틀88'</strong>은 조급함 대신 매일의 작은 좋은 습관을 쌓아 88세, 그 이상까지 활기찬 삶을 영위하는 장수 파트너입니다.
+        </p>
+
+        <button class="btn-submit" onclick="closeModal('mascot')">함께 실천하기</button>
+      </div>
+    </div>
+
+    <!-- MODAL: AUTH GATEKEEPER (Triggered after 8 questions) -->
+    <div class="modal-overlay" id="modal-gatekeeper">
+      <div class="modal-box" style="text-align:center;">
+        <div style="font-size: 40px; margin-bottom: 6px;">🎉</div>
+        <h3 class="modal-title">88 CHECK 진단 완료!</h3>
+        <p style="font-size: 13px; color: var(--text-medium); line-height: 1.5; margin: 8px 0 16px;">
+          회원님의 88 활력 지수 분석 리포트와 1:1 맞춤 추천 플랜을 확인하시려면 <strong>회원가입 또는 로그인</strong>이 필요합니다.
+        </p>
+        <div style="background:var(--bg); padding:10px; border-radius:10px; font-size:11.5px; color:var(--primary-dark); margin-bottom:16px;">
+          🌿 방금 응답하신 소중한 답변 데이터는 안전하게 보존되어 있으니, 가입 즉시 결과를 확인하실 수 있습니다.
+        </div>
+
+        <button class="btn-submit" onclick="closeModal('gatekeeper'); openModal('signup');" style="margin-bottom:8px;">
+          간편 회원가입하고 결과 보기
+        </button>
+        <button onclick="closeModal('gatekeeper'); openModal('login');" style="width:100%; padding:12px; background:#fff; border:1px solid var(--primary); color:var(--primary); border-radius:12px; font-size:14px; font-weight:700; cursor:pointer;">
+          기존 계정으로 로그인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // State
+    let currentUser = null;
+    let currentQuestionIdx = 0;
+    const questions = [
+      { domain: "신체 근력 (STRENGTH)", title: "의자에서 손을 짚지 않고 일어나는 것이 수월하십니까?", desc: "하지 근력은 독립적인 일상생활과 보행 안정성을 결정짓는 핵심 지표입니다." },
+      { domain: "관절 가동성 (MOBILITY)", title: "양팔을 머리 위로 올려 기지개를 켤 때 어깨에 불편함이 없으십니까?", desc: "어깨와 척추 관절의 유연성은 원활한 상체 움직임의 기초입니다." },
+      { domain: "동적 밸런스 (BALANCE)", title: "한 발로 서서 15초 이상 균형을 유지할 수 있으십니까?", desc: "고유수용감각과 균형 능력은 낙상 예방에 가장 중요한 요소입니다." },
+      { domain: "심폐 지구력 (ENDURANCE)", title: "가벼운 조깅이나 빠른 걸음으로 20분 이상 지치지 않고 걸으실 수 있습니까?", desc: "심폐 활력은 전신 산소 공급과 혈관 건강을 책임집니다." },
+      { domain: "수면 & 회복 (RECOVER)", title: "아침에 일어났을 때 개운하고 활력이 충분하다고 느끼십니까?", desc: "깊은 수면은 뇌의 노폐물 배출과 신체 세포 재생의 골든타임입니다." },
+      { domain: "소셜 교류 (CONNECT)", title: "일주일에 2회 이상 친구나 지인과 의미 있는 대화와 만남을 가지십니까?", desc: "사회적 유대감은 뇌 활성화와 정서적 안정에 핵심적인 역할을 합니다." },
+      { domain: "영양 균형 (NOURISH)", title: "끼니마다 단백질(계란, 생선, 두부 등)과 신선한 채소를 고루 챙겨 드십니까?", desc: "양질의 단백질 공급은 근육 손실을 막고 면역력을 지킵니다." },
+      { domain: "두뇌 배움 (LEARN)", title: "새로운 스마트폰 기능이나 독서, 취미 활동을 즐겁게 배우고 계십니까?", desc: "매일 새로운 자극은 신경 가소성을 높여 뇌를 젊게 유지합니다." }
+    ];
+    let userAnswers = [];
+
+    // Tab Navigation
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+
+      const targetTab = document.getElementById('tab-' + tabId);
+      const targetNav = document.getElementById('nav-' + tabId);
+      if (targetTab) targetTab.classList.add('active');
+      if (targetNav) targetNav.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Drawer Controls
+    function toggleDrawer(open) {
+      document.getElementById('side-drawer').classList.toggle('open', open);
+      document.getElementById('drawer-overlay').classList.toggle('open', open);
+    }
+
+    // Modal Controls
+    function openModal(id) {
+      document.getElementById('modal-' + id).classList.add('open');
+    }
+    function closeModal(id) {
+      document.getElementById('modal-' + id).classList.remove('open');
+    }
+
+    // MY 88 CHECK Logic
+    function startCheck() {
+      currentQuestionIdx = 0;
+      userAnswers = [];
+      document.getElementById('check-intro').style.display = 'none';
+      document.getElementById('check-result').style.display = 'none';
+      document.getElementById('check-eval').style.display = 'block';
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const q = questions[currentQuestionIdx];
+      document.getElementById('q-step-text').innerText = `QUESTION ${currentQuestionIdx + 1} / ${questions.length}`;
+      document.getElementById('q-domain-text').innerText = q.domain;
+      document.getElementById('q-title-text').innerText = q.title;
+      document.getElementById('q-desc-text').innerText = q.desc;
+    }
+
+    function selectScore(score) {
+      userAnswers.push(score);
+      if (currentQuestionIdx < questions.length - 1) {
+        currentQuestionIdx++;
+        renderQuestion();
+      } else {
+        // Finished evaluation!
+        document.getElementById('check-eval').style.display = 'none';
+        if (!currentUser) {
+          // Gatekeeper: Require auth to view result
+          openModal('gatekeeper');
+          document.getElementById('check-intro').style.display = 'block';
+        } else {
+          showResult();
+        }
+      }
+    }
+
+    function showResult() {
+      document.getElementById('check-intro').style.display = 'none';
+      document.getElementById('check-eval').style.display = 'none';
+      document.getElementById('check-result').style.display = 'block';
+      const sum = userAnswers.reduce((a, b) => a + b, 0);
+      const avg = Math.round((sum / (userAnswers.length * 5)) * 100) || 84;
+      document.getElementById('result-score-val').innerText = avg;
+      if (currentUser) {
+        document.getElementById('result-user-title').innerText = `${currentUser.name} 회원님의 88 종합 활력 지수`;
+      }
+    }
+
+    // Auth Handlers
+    function handleLogin() {
+      const email = document.getElementById('login-email').value.trim();
+      currentUser = {
+        name: "김재원",
+        email: email || "nexthealthcare8@gmail.com"
+      };
+      updateAuthUI();
+      closeModal('login');
+      alert(`${currentUser.name}님 환영합니다!`);
+      if (userAnswers.length === questions.length) {
+        showResult();
+      }
+    }
+
+    function handleSignUp() {
+      const name = document.getElementById('reg-name').value.trim() || "김재원";
+      const email = document.getElementById('reg-email').value.trim() || "nexthealthcare8@gmail.com";
+      currentUser = { name, email };
+      updateAuthUI();
+      closeModal('signup');
+      alert(`회원가입이 완료되었습니다, ${name}님!`);
+      if (userAnswers.length === questions.length) {
+        showResult();
+      }
+    }
+
+    function handleLogout() {
+      currentUser = null;
+      updateAuthUI();
+      alert("로그아웃 되었습니다.");
+      switchTab('home');
+    }
+
+    function updateAuthUI() {
+      const guestBox = document.getElementById('drawer-guest-view');
+      const userBox = document.getElementById('drawer-user-view');
+      const signupMenu = document.getElementById('drawer-menu-signup');
+      const loginMenu = document.getElementById('drawer-menu-login');
+
+      if (currentUser) {
+        guestBox.style.display = 'none';
+        userBox.style.display = 'block';
+        document.getElementById('logged-user-name').innerText = `${currentUser.name} 회원님`;
+        document.getElementById('logged-user-email').innerText = currentUser.email;
+        signupMenu.style.display = 'none';
+        loginMenu.style.display = 'none';
+      } else {
+        guestBox.style.display = 'block';
+        userBox.style.display = 'none';
+        signupMenu.style.display = 'flex';
+        loginMenu.style.display = 'flex';
+      }
+    }
+  </script>
+</body>
+</html>
